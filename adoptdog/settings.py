@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-+b117+$ky-v=19^)h1ovjcmk^reg4p5dp0h_9#s^bf1n_nh&vu
 DEBUG = False
 
 ALLOWED_HOSTS = ['8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net',
-'https://8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net']
+'https://8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net',
+'.herokuapp.com']
 
 
 # Application definition
