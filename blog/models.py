@@ -14,8 +14,8 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
 # dog fields added below
-    dog_name = models.CharField(max_length=200, unique=True)
-    dog_type = models.CharField(max_length=200, unique=True)
+    dog_name = models.CharField(max_length=200, unique=False)
+    dog_type = models.CharField(max_length=200, unique=False)
     dog_age = models.IntegerField()
     dog_stay = models.IntegerField()
     sanctuary = models.ForeignKey('Sanctuary', on_delete=models.CASCADE, related_name="dogs")
