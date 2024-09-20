@@ -32,7 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net',
 'https://8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net',
-'.herokuapp.com']
+'.herokuapp.com', 'www.adoptdog.co.uk', 'adoptdog.co.uk']
 
 
 # Application definition
@@ -104,7 +104,9 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
 "https://*.codeinstitute-ide.net/",
-"https://*.herokuapp.com"
+"https://*.herokuapp.com",
+"https://www.adoptdog.co.uk",
+"https://adoptdog.co.uk",
 ]
 
 # Database
