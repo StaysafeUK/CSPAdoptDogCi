@@ -19,7 +19,7 @@
                                     <p class="author border p-2">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <!-- Border around title -->
                                 <h2 class="card-title border p-2">{{ post.title }}</h2>
                                 <p class="card-text"> {{ post.excerpt }}</p>
