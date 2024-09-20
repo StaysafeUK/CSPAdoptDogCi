@@ -9,6 +9,7 @@
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{{ post.sanctuary.sanct_name }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/houndshotels.webp' %}" class="scale" alt="placeholder">
@@ -23,6 +24,7 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
+                <h2> {{ post.dog_name }} </h2>
                 <p class="card-text">
                     {{ post.content | safe }}
                 </p>
@@ -30,5 +32,68 @@
         </div>
     </div>
 </div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title">Dog Details</h4>
+        <table class="table table-dark table-striped">
+            <tbody>
+                <tr>
+                    <td><strong>Dog Type</strong></td>
+                    <td>{{ post.dog_type }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Dog Age</strong></td>
+                    <td>{{ post.dog_age }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Length of Stay</strong></td>
+                    <td>{{ post.dog_stay }} days</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- card for Sanctuary details Table -->
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title">Sanctuary Details</h4>
+        <table class="table table-dark table-striped">
+            <tbody>
+                <tr>
+                    <td><strong>Sanctuary Name</strong></td>
+                    <td>{{ post.sanctuary.sanct_name }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Address</strong></td>
+                    <td>{{ post.sanctuary.sanct_address }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Postcode</strong></td>
+                    <td>{{ post.sanctuary.sanct_postcode }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Telephone</strong></td>
+                    <td>{{ post.sanctuary.sanct_telephone }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>{{ post.sanctuary.sanct_email }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Website</strong></td>
+                    <td><a href="{{ post.sanctuary.sanct_website }}" target="_blank">{{ post.sanctuary.sanct_website }}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
 
 {% endblock content %}
