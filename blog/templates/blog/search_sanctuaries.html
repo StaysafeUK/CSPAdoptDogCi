@@ -7,7 +7,35 @@
             <br/>
             {% if sanctuaries %}
                 {% for sanctuary in sanctuaries %}
-                    <p>{{ sanctuary.sanct_name }} - <i>{{ sanctuary.sanct_address }}</i> - {{ santuary.sanct_url }}</p>
+                <table class="table table-light table-striped">
+                    <tbody>
+                        <tr>
+                            <td><strong>Sanctuary Name</strong></td>
+                            <td>{{ sanctuary.sanct_name }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Address</strong></td>
+                            <td>{{ sanctuary.sanct_address }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Postcode</strong></td>
+                            <td>{{ sanctuary.sanct_postcode }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telephone</strong></td>
+                            <td>{{ sanctuary.sanct_telephone }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td>{{ sanctuary.sanct_email }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Website</strong></td>
+                            <td><a href="{{ sanctuary.sanct_website }}"
+                                    target="_blank">{{ sanctuary.sanct_website }}</a></td>
+                    </tbody>
+                </table>
+                <br/>
                 {% endfor %}
             {% else %}
                 <p>No sanctuaries found matching "{{ searched }}".</p>
