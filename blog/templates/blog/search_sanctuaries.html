@@ -7,34 +7,38 @@
             <br/>
             {% if sanctuaries %}
                 {% for sanctuary in sanctuaries %}
-                <table class="table table-light table-striped">
-                    <tbody>
-                        <tr>
-                            <td><strong>Sanctuary Name</strong></td>
-                            <td>{{ sanctuary.sanct_name }}</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Address</strong></td>
-                            <td>{{ sanctuary.sanct_address }}</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Postcode</strong></td>
-                            <td>{{ sanctuary.sanct_postcode }}</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Telephone</strong></td>
-                            <td>{{ sanctuary.sanct_telephone }}</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Email</strong></td>
-                            <td>{{ sanctuary.sanct_email }}</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Website</strong></td>
-                            <td><a href="{{ sanctuary.sanct_website }}"
-                                    target="_blank">{{ sanctuary.sanct_website }}</a></td>
-                    </tbody>
-                </table>
+                <div class="col-md-6 card mb-4 mt-3 left top">
+                    <div class="card-body">
+                        <table class="table table-light table-striped">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sanctuary Name</strong></td>
+                                    <td>{{ sanctuary.sanct_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Address</strong></td>
+                                    <td>{{ sanctuary.sanct_address }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Postcode</strong></td>
+                                    <td>{{ sanctuary.sanct_postcode }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Telephone</strong></td>
+                                    <td>{{ sanctuary.sanct_telephone }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Email</strong></td>
+                                    <td>{{ sanctuary.sanct_email }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Website</strong></td>
+                                    <td><a href="{{ sanctuary.sanct_website }}" target="_blank">{{ sanctuary.sanct_website }}</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> <!-- Close card-body -->
+                </div> <!-- Close col-md-6 card -->
                 <br/>
                 {% endfor %}
             {% else %}
