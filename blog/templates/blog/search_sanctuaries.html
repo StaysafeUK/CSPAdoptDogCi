@@ -37,6 +37,24 @@
                                 </tr>
                             </tbody>
                         </table>
+
+                        <!-- List of Dogs at this Sanctuary -->
+                        <h4 class="mt-3">Dogs at {{ sanctuary.sanct_name }}:</h4>
+                        {% if sanctuary.dogs.all %}
+                            <ul>
+                                {% for dog in sanctuary.dogs.all %}
+                                <li>
+                                    <img src="{{ dog.featured_image.url }}" alt="{{ dog.dog_name }}" style="width: 100px; height: auto;"/>
+                                    <strong>Name:</strong> <a href="{% url 'post_detail' slug=dog.slug %}">{{ dog.dog_name }}</a> - 
+                                    <strong>Type:</strong> {{ dog.dog_type }} - 
+                                    <strong>Age:</strong> {{ dog.dog_age }} - 
+                                    <strong>Length of Stay:</strong> {{ dog.dog_stay }} months
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No dogs currently available at this sanctuary.</p>
+                        {% endif %}
                     </div> <!-- Close card-body -->
                 </div> <!-- Close col-md-6 card -->
                 <br/>

@@ -86,3 +86,7 @@ def search_sanctuaries(request):
         return render(request, 'blog/search_sanctuaries.html', {'searched':searched, 'sanctuaries':sanctuaries})
     else:
         return render(request, 'blog/search_sanctuaries.html', {})
+
+def dog_detail(request, slug):
+    dog = get_object_or_404(Post, slug=slug)
+    return render(request, 'blog/dog_detail.html', {'dog': dog})
