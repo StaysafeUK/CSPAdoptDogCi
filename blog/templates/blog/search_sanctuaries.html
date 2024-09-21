@@ -2,8 +2,18 @@
 
 {% block content %}
     <center>
-        <h1> You searched for...</h1>
+        {% if searched %}
+            <h1>You searched for "{{ searched }}"</h1>
+            <br/>
+            {% if sanctuaries %}
+                {% for sanctuary in sanctuaries %}
+                    <p>{{ sanctuary.sanct_name }} - <i>{{ sanctuary.sanct_address }}</i> - {{ santuary.sanct_url }}</p>
+                {% endfor %}
+            {% else %}
+                <p>No sanctuaries found matching "{{ searched }}".</p>
+            {% endif %}
+        {% else %}
+            <h1>Enter your search</h1>
+        {% endif %}
     </center>
-
 {% endblock %}
-

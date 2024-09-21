@@ -80,4 +80,9 @@ def comment_delete(request, slug, comment_id):
        
 def search_sanctuaries(request):
     if request.method == "POST":
+        searched = request.POST['searched']
+        sanctuaries = Sanctuary.objects.filter(sanct_name__icontains=searched)
+
+        return render(request, 'blog/search_sanctuaries.html', {'searched':searched, 'sanctuaries':sanctuaries})
+    else:
         return render(request, 'blog/search_sanctuaries.html', {})
