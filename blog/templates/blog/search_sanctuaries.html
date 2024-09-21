@@ -43,13 +43,21 @@
                         {% if sanctuary.dogs.all %}
                             <ul>
                                 {% for dog in sanctuary.dogs.all %}
-                                <li>
-                                    <img src="{{ dog.featured_image.url }}" alt="{{ dog.dog_name }}" style="width: 100px; height: auto;"/>
-                                    <strong>Name:</strong> <a href="{% url 'post_detail' slug=dog.slug %}">{{ dog.dog_name }}</a> - 
-                                    <strong>Type:</strong> {{ dog.dog_type }} - 
-                                    <strong>Age:</strong> {{ dog.dog_age }} - 
-                                    <strong>Length of Stay:</strong> {{ dog.dog_stay }} months
-                                </li>
+                                <table class="table table-light table-striped">
+                                    <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="{{ dog.featured_image.url }}" alt="{{ dog.dog_name }}" style="width: 100px; height: auto;"/>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'post_detail' slug=dog.slug %}">{{ dog.dog_name }}</a>
+                                    </td>
+                                    <td>{{ dog.dog_type }}</td>
+                                    <td>{{ dog.dog_age }}</td>
+                                    <td>{{ dog.dog_stay }} months</td>
+                                </tr>
+                                </tbody>
+                                </table>
                                 {% endfor %}
                             </ul>
                         {% else %}
