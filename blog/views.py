@@ -78,4 +78,6 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
        
-
+def search_sanctuaries(request):
+    if request.method == "POST":
+        return render(request, 'blog/search_sanctuaries.html', {})
