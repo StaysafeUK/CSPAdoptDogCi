@@ -2,31 +2,35 @@
   
   # Contents 
   
+  - [ADOPTDOG PROJECT https://www.adoptdog.co.uk](#adoptdog-project-https---wwwadoptdogcouk)
+- [Contents](#contents)
   * [1. OVERVIEW](#1-overview)
   * [2. USER STORIES](#2-user-stories)
   * [3. SITE OWNER GOALS](#3-site-owner-goals)
   * [4. FEATURES](#4-features)
   * [5. UX/UI](#5-ux-ui)
+    + [AdoptDog CSS Colours](#adoptdog-css-colours)
   * [User Experience Design](#user-experience-design)
   * [6. WIREFRAMES](#6-wireframes)
-  * [AdoptDog Landing Page](#adoptdog-landing-page)
-  * [AdoptDog Selection-view](#adoptdog-selection-view)
-  * [AdoptDog Registration](#adoptdog-registration)
-  * [AdoptDog Search](#adoptdog-search)
+    * [AdoptDog Landing Page](#adoptdog-landing-page)
+    * [AdoptDog Selection-view](#adoptdog-selection-view)
+    * [AdoptDog Registration](#adoptdog-registration)
+    * [AdoptDog Search](#adoptdog-search)
   * [7. ENTITY RELATIONSHIP DIAGRAMS](#7-entity-relationship-diagrams)
-  * [Full Entity relationship Diagram of Django Models](#full-entity-relationship-diagram-of-django-models)
-  * [AdoptDog Draw.io Entity Relationship Diagram V1.6](#adoptdog-drawio-entity-relationship-diagram-v16)
+    * [Full Entity relationship Diagram of Django Models](#full-entity-relationship-diagram-of-django-models)
+    * [AdoptDog Draw.io Entity Relationship Diagram V1.6](#adoptdog-drawio-entity-relationship-diagram-v16)
   * [8. TESTING](#8-testing)
   * [9. DEPLOYMENT](#9-deployment)
-  * [Database](#database)
-  * [Deploying to Heroku](#deploying-to-heroku)
+    * [Database](#database)
+    * [Deploying to Heroku](#deploying-to-heroku)
   * [10. TECHNOLOGIES](#10-technologies)
-  * [Software](#software)
+    * [Software](#software)
   * [11. MEDIA](#11-media)
   * [12. FUTURE FEATURES](#12-future-features)
 - [END OF README.md](#end-of-readmemd)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## 1. OVERVIEW
 
