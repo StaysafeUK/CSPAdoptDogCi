@@ -3,7 +3,7 @@
   * [3. SITE OWNER GOALS](#3-site-owner-goals)
   * [4. FEATURES](#4-features)
   * [5. UX/UI](#5-ux-ui)
-- [User Experience Design](#user-experience-design)
+  * [User Experience Design](#user-experience-design)
   * [6. WIREFRAMES](#6-wireframes)
   * [AdoptDog Landing Page](#adoptdog-landing-page)
   * [AdoptDog Selection-view](#adoptdog-selection-view)
@@ -14,15 +14,16 @@
   * [AdoptDog Draw.io Entity Relationship Diagram V1.6](#adoptdog-drawio-entity-relationship-diagram-v16)
   * [8. TESTING](#8-testing)
   * [9. DEPLOYMENT](#9-deployment)
-- [Database](#database)
-- [Deploying to Heroku](#deploying-to-heroku)
+  * [Database](#database)
+  * [Deploying to Heroku](#deploying-to-heroku)
   * [10. TECHNOLOGIES](#10-technologies)
-- [Software](#software)
+  * [Software](#software)
   * [10. MEDIA](#10-media)
   * [11. FUTURE FEATURES](#11-future-features)
 - [END OF README.md](#end-of-readmemd)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 ## 1. OVERVIEW
@@ -43,7 +44,7 @@ I hope to actively help in finding dogs new homes where they can become part of 
 
 ## 5. UX/UI
 
-# User Experience Design
+## User Experience Design
 
 ## 6. WIREFRAMES
 
@@ -89,13 +90,13 @@ I hope to actively help in finding dogs new homes where they can become part of 
 
 ## 9. DEPLOYMENT
 
-# Database
+## Database
 
-# Deploying to Heroku
+## Deploying to Heroku
 
 ## 10. TECHNOLOGIES
 
-# Software
+## Software
 
 ## 10. MEDIA
 
