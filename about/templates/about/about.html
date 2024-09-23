@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-12 col-md-4 text-center">
             {% if "placeholder" in about.profile_image.url %}
-            <img src="{% static 'images/nobody.jpg' %}"  alt="placeholder image" class="profile_image" >
+            <img src="{% static 'images/nobody.jpg' %}"  alt="placeholder image" class="profile_image">
             {% else %}
             <img src="{{ about.profile_image.url }}" alt="{{ about.title }}" class="profile_image">
             {% endif %}
-                </div>
+        </div>
         <div class="col-12 col-md-8">
             <h2>{{ about.title }}</h2>
             {{ about.content | safe }}
@@ -19,21 +19,15 @@
     </div>
     <div class="row">
         <div class="col text-right">
-            <!-- Updated on field goes in here -->
-
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col text-right">
+        <div class="col text-center">
             <h2>Let's get these dogs homes!</h2>
-            <p>I believe in the power of collective effort.
-                Whether you have a dog sanctuary, or wish to adopt
-                your dog. I Would be excited to hear from you. Fill
-                out the form and we can get the ball rolling!</p>
+            <p>I believe in the power of collective effort. Whether you have a dog sanctuary, or wish to adopt
+                your dog. I Would be excited to hear from you. Fill out the form and we can get the ball rolling!</p>
 
-            <!-- add your form here. Your submit button should 
-                                have the classes of btn, btn-secondary -->
             <form method="post">
                 {{ collaborate_form | crispy }}
                 {% csrf_token %}

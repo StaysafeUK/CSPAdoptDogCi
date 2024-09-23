@@ -99,10 +99,13 @@ body {
 
 .profile-image {
     width: 75%;
-    height: auto; /*  aspect ratio is maintained */
-    max-width: 100%; /* Prevents image from leaving it's container */
-    object-fit: cover; /* Ensures the image covers space */
+    height: auto;       /*  aspect ratio */
+    max-width: 100%;    /* Prevent overflow */
+    object-fit: cover;  /* Ensures image fits */
+    display: block;
+    margin: 0 auto;     /* Center the image */
 }
+
 
 .post-link:hover,
 .page-link {
