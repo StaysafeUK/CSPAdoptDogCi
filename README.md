@@ -33,7 +33,38 @@ I hope to actively help in finding these dogs through no fault of their own from
 
 ## 6. WIREFRAMES
 
-## 7. TESTING
+## AdoptDog Landing Page
+
+<div>
+<img src="documentation/wireframes/adoptdog-landingpage.webp" alt="AdoptDog Landing page wireframe">
+</div>
+
+## AdoptDog Selection-view
+
+<div>
+<img src="documentation/wireframes/adoptdog-selection-view.webp" alt="AdoptDog Selection-view wireframe">
+</div>
+
+## AdoptDog Registration
+
+<div>
+<img src="documentation/wireframes/adoptdog-registration.webp" alt="AdoptDog Registration page wireframe">
+</div>
+
+## AdoptDog Search
+
+<div>
+<img src="documentation/wireframes/adoptdog-search.webp.webp" alt="AdoptDog Registration page wireframe">
+</div>
+
+
+
+
+
+
+
+
+
 
 ## 8. DEPLOYMENT
 
