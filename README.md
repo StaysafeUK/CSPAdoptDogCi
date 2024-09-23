@@ -46,6 +46,13 @@ I hope to actively help in finding dogs new homes where they can become part of 
 
 ## 5. UX/UI
 
+### AdoptDog CSS Colours 
+
+<div>
+<img src="documentation/diagrams/adopdog-css-colours.webp" alt="AdoptDog CSS Colours Diagram">
+</div>
+
+
 ## User Experience Design
 
 ## 6. WIREFRAMES
