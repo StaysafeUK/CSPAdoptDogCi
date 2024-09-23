@@ -98,7 +98,11 @@ body {
 
 .profile-image {
     width: 75%;
+    height: auto; /*  aspect ratio is maintained */
+    max-width: 100%; /* Prevents image from leaving it's container */
+    object-fit: cover; /* Ensures the image covers space */
 }
+
 
 .post-link:hover,
 .page-link {
