@@ -1,17 +1,29 @@
+  * [1. OVERVIEW](#1-overview)
+  * [2. USER STORIES](#2-user-stories)
+  * [3. SITE OWNER GOALS](#3-site-owner-goals)
+  * [4. FEATURES](#4-features)
+  * [5. UX/UI](#5-ux-ui)
+- [User Experience Design](#user-experience-design)
+  * [6. WIREFRAMES](#6-wireframes)
+  * [AdoptDog Landing Page](#adoptdog-landing-page)
+  * [AdoptDog Selection-view](#adoptdog-selection-view)
+  * [AdoptDog Registration](#adoptdog-registration)
+  * [AdoptDog Search](#adoptdog-search)
+  * [7. ENTITY RELATIONSHIP DIAGRAMS](#7-entity-relationship-diagrams)
+  * [Full Entity relationship Diagram of Django Models](#full-entity-relationship-diagram-of-django-models)
+  * [AdoptDog Draw.io Entity Relationship Diagram V1.6](#adoptdog-drawio-entity-relationship-diagram-v16)
+  * [8. TESTING](#8-testing)
+  * [9. DEPLOYMENT](#9-deployment)
+- [Database](#database)
+- [Deploying to Heroku](#deploying-to-heroku)
+  * [10. TECHNOLOGIES](#10-technologies)
+- [Software](#software)
+  * [10. MEDIA](#10-media)
+  * [11. FUTURE FEATURES](#11-future-features)
+- [END OF README.md](#end-of-readmemd)
 
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-# TABLE OF CONTENTS
-
-1. [OVERVIEW] (#OVERVIEW)
-2. [USER GOALS] (#USER-GOALS)
-3. [SITE OWNER GOALS] (#SITE-OWNER-GOALS)
-4. [FEATURES] (#FEATURES)
-5. [UX/UI] (#UX/UI)
-6. [WIREFRAMES] (#WIREFRAMES)
-7. [ENTITY RELATIONSHIP DIAGRAM] (#ENTITY-RELATIONSHIP-DIAGRAM)
-8. [TESTING] (#TESTING)
-9. [DEPLOYMENT] (#DEPLOYMENT)
-10. [FUTURE FEATURES] (#FUTURE-FEATURES)
 
 ## 1. OVERVIEW
 
@@ -21,13 +33,17 @@ This site will for the duration of the project hold fictitious sanctuaries and d
 
 I hope to actively help in finding dogs new homes where they can become part of a new family.  As through no fault of their own, if they do not gain new owners the dogs will be destroyed. 
 
-## 2. USER GOALS
+## 2. USER STORIES
 
 ## 3. SITE OWNER GOALS
+
+
 
 ## 4. FEATURES
 
 ## 5. UX/UI
+
+# User Experience Design
 
 ## 6. WIREFRAMES
 
@@ -73,6 +89,16 @@ I hope to actively help in finding dogs new homes where they can become part of 
 
 ## 9. DEPLOYMENT
 
-## 10. FUTURE FEATURES
+# Database
+
+# Deploying to Heroku
+
+## 10. TECHNOLOGIES
+
+# Software
+
+## 10. MEDIA
+
+## 11. FUTURE FEATURES
 
 # END OF README.md
