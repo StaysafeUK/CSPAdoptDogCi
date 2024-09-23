@@ -19,7 +19,7 @@ Twenty thousand dogs are euthanized a year in the UK,  the majority of these dog
 
 This site will for the duration of the project hold fictitious sanctuaries and dogs until the project is marked,  potentially after the marking the site can be populated with real data.
 
-I hope to actively help in finding these dogs through no fault of their own from being destroyed and finding them new homes where they can become part of a new family.  
+I hope to actively help in finding dogs new homes where they can become part of a new family.  As through no fault of their own, if they do not gain new owners the dogs will be destroyed. 
 
 ## 2. USER GOALS
 
