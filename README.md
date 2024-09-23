@@ -18,13 +18,11 @@
   * [Deploying to Heroku](#deploying-to-heroku)
   * [10. TECHNOLOGIES](#10-technologies)
   * [Software](#software)
-  * [10. MEDIA](#10-media)
-  * [11. FUTURE FEATURES](#11-future-features)
+  * [11. MEDIA](#11-media)
+  * [12. FUTURE FEATURES](#12-future-features)
 - [END OF README.md](#end-of-readmemd)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 
 ## 1. OVERVIEW
 
@@ -98,8 +96,8 @@ I hope to actively help in finding dogs new homes where they can become part of 
 
 ## Software
 
-## 10. MEDIA
+## 11. MEDIA
 
-## 11. FUTURE FEATURES
+## 12. FUTURE FEATURES
 
 # END OF README.md
