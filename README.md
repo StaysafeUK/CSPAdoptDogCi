@@ -8,9 +8,10 @@
 4. [FEATURES] (#FEATURES)
 5. [UX/UI] (#UX/UI)
 6. [WIREFRAMES] (#WIREFRAMES)
-7. [TESTING] (#TESTING)
-8. [DEPLOYMENT] (#DEPLOYMENT)
-9. [FUTURE FEATURES] (#FUTURE-FEATURES)
+7. [ENTITY RELATIONSHIP DIAGRAM] (#ENTITY-RELATIONSHIP-DIAGRAM)
+8. [TESTING] (#TESTING)
+9. [DEPLOYMENT] (#DEPLOYMENT)
+10. [FUTURE FEATURES] (#FUTURE-FEATURES)
 
 ## 1. OVERVIEW
 
@@ -56,17 +57,24 @@ I hope to actively help in finding these dogs through no fault of their own from
 <img src="documentation/wireframes/adoptdog-search.webp" alt="AdoptDog Registration page wireframe">
 </div>
 
+## 7. ENTITY RELATIONSHIP DIAGRAM
+
+## Full Entity relationship Diagram of Django Models
+
+<div>
+<img src="documentation/diagrams/erd_models.webp" alt="AdoptDog Full Entity Relationship Diagram">
+</div>
 
 
+## AdoptDog Draw.io Entity Relationship Diagram V1.6
+<div>
+<img src="documentation/diagrams/adoptdog-erd_1.6.webp" alt="AdoptDog Entity Relationship Diagram">
+</div>
 
+## 8. TESTING
 
+## 9. DEPLOYMENT
 
-
-
-
-
-## 8. DEPLOYMENT
-
-## 9. FUTURE FEATURES
+## 10. FUTURE FEATURES
 
 # END OF README.md
