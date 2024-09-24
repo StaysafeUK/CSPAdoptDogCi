@@ -36,7 +36,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net',
 'https://8000-staysafeuk-cspadoptdogc-mhajk4u2qj5.ws.codeinstitute-ide.net',
