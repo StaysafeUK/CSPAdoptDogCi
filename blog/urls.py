@@ -4,7 +4,7 @@ from django.urls import path
 #URL pattern for default site 
 urlpatterns = [
 
-    path('signup/', views.signup, name='signup'),
+    # path('signup/', views.signup, name='signup'),
     path('activate/<slug:uidb64>/<slug:token>/', views.activate_account, name='activate'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('<slug:slug>/edit_comment/<int:comment_id>', views.comment_edit, name='comment_edit'),
