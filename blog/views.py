@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Comment, Post, Sanctuary
 from .forms import CommentForm
+from django.core.mail import send_mail
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -82,6 +83,7 @@ def search_sanctuaries(request):
     if request.method == "POST":
         searched = request.POST['searched']
         sanctuaries = Sanctuary.objects.filter(sanct_name__icontains=searched)
+        send_mail('Test Message', 'So youve got search working.', 'adoptdog@verifyus.co.uk', ['justin.robert.evans@protonmail.com'], fail_silently=False)
 
         return render(request, 'blog/search_sanctuaries.html', {'searched':searched, 'sanctuaries':sanctuaries})
     else:
