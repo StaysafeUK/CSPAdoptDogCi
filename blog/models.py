@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
 
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
-from django.utils.encoding import force_str
+#from django.contrib.auth.tokens import PasswordResetTokenGenerator
+#from django.utils.encoding import force_str
 
 # Create your models here.
 
@@ -60,15 +60,15 @@ class Sanctuary(models.Model):
     def __str__(self):
         return f"name of sanctuary: {self.sanct_name}"
 
-#TEST 
+# #TEST 
 
-class TokenGenerator(PasswordResetTokenGenerator):
-    def _make_hash_value(self, user, timestamp):
-        return (
-            str(user.pk) + str(timestamp) + str(user.is_active)
-        )
+# class TokenGenerator(PasswordResetTokenGenerator):
+#     def _make_hash_value(self, user, timestamp):
+#         return (
+#             str(user.pk) + str(timestamp) + str(user.is_active)
+#         )
 
-account_activation_token = TokenGenerator()
+# account_activation_token = TokenGenerator()
 
  
 
