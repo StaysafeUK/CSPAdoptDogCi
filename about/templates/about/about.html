@@ -7,33 +7,77 @@
     <div class="row">
         <div class="col-12 col-md-4 text-center">
             {% if "placeholder" in about.profile_image.url %}
-            <img src="{% static 'images/nobody.jpg' %}" alt="placeholder image" class="profile_image">
+                <img src="{% static 'images/nobody.jpg' %}" alt="placeholder image" class="profile_image">
             {% else %}
-            <img src="{{ about.profile_image.url }}" alt="{{ about.title }}" width=85% class="profile_image">
+                <img src="{{ about.profile_image.url }}" alt="{{ about.title }}" width="85%" class="profile_image">
             {% endif %}
         </div>
-<div class="col-12 col-md-8">
-    <h2>{{ about.title }}</h2>
-    {{ about.content | safe }}
-</div>
-</div>
-<div class="row">
-    <div class="col text-right">
-        <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+        <div class="col-12 col-md-8">
+            <h2>{{ about.title }}</h2>
+            {{ about.content | safe }}
+        </div>
     </div>
-</div>
-<div class="row justify-content-center">
-    <div class="col text-center">
-        <h2>Let's get these dogs homes!</h2>
-        <p>I believe in the power of collective effort. Whether you have a dog sanctuary, or wish to adopt
-            your dog. I Would be excited to hear from you. Fill out the form and we can get the ball rolling!</p>
 
-        <form method="post">
-            {{ collaborate_form | crispy }}
-            {% csrf_token %}
-            <button class="btn btn-secondary" type="submit">Submit</button>
-        </form>
+    <div class="row">
+        <div class="col text-right">
+            <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+        </div>
     </div>
-</div>
+
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <h2>Let's get these dogs homes!</h2>
+            <p>I believe in the power of collective effort. Whether you have a dog sanctuary, or wish to adopt
+                your dog, I would be excited to hear from you. Fill out the form and we can get the ball rolling!</p>
+
+            <!-- Collaborate Form -->
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ collaborate_form | crispy }}
+                <input type="hidden" name="collaborate_submit" value="1">
+                <button class="btn btn-secondary" type="submit">Submit Request</button>
+            </form>
+
+            <hr>
+
+            <!-- Leave Comment Form -->
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ leavecomment_form | crispy }}
+                <input type="hidden" name="leavecomment_submit" value="1">
+                <button class="btn btn-secondary" type="submit">Submit Comment</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-3">
+            <h3>Leave Comments:</h3>
+            <div class="card-body">
+                {% for comment in leavecomments %}
+                <div class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                    <p class="font-weight-bold">
+                        {{ comment.name }}
+                        <span class="font-weight-normal">
+                            {{ comment.created_on }}
+                        </span> wrote:
+                    </p>
+                    <div id="comment{{ comment.id }}">
+                        {{ comment.body | linebreaks }}
+                    </div>
+                    {% if not comment.approved and comment.name == user %}
+                    <p class="approval">
+                        This comment is awaiting approval
+                    </p>
+                    {% endif %}
+                    {% if user.is_authenticated and comment.name == user %}
+                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}
