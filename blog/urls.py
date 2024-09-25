@@ -11,5 +11,5 @@ urlpatterns = [
     path('<slug:slug>/delete_comment/<int:comment_id>', views.comment_delete, name='comment_delete'),
     path('search_sanctuaries', views.search_sanctuaries, name='search-sanctuaries'),
     path('dog/<slug:slug>/', views.dog_detail, name='dog_detail'),
-     path('', views.PostList.as_view(), name='home')
+    path('', views.PostList.as_view(), name='home')
 ]

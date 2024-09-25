@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
 
+from django.contrib.auth.decorators import login_required
+
+
 #from django.contrib.auth.tokens import PasswordResetTokenGenerator
 #from django.utils.encoding import force_str
 
@@ -45,10 +48,9 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.author}"
 
     class Meta:
-        ordering = ["created_on"]
+        ordering = ["created_on"]   
 
-    
-
+        
 class Sanctuary(models.Model):
     sanct_name = models.CharField(max_length=200)
     sanct_address = models.TextField()

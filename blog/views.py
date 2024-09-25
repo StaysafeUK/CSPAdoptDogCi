@@ -5,6 +5,8 @@ from django.http import HttpResponseRedirect
 from .models import Comment, Post, Sanctuary #, account_activation_token
 from .forms import CommentForm #, SignupForm
 
+from django.contrib.auth.decorators import login_required
+
 # from django.contrib.sites.shortcuts import get_current_site
 # from django.core.mail import send_mail
 # from django.template.loader import render_to_string
@@ -68,6 +70,7 @@ def post_detail(request, slug):
     comment_form = CommentForm()
 
     return render(request, "blog/post_detail.html", {"post": post, "comments": comments, "comment_count": comment_count, "comment_form": comment_form, },)
+
 
 def comment_edit(request, slug, comment_id):
     """
