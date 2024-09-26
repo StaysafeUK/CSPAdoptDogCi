@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About, CollaborateRequest
+from .models import About, CollaborateRequest, LeaveComment
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -12,3 +12,9 @@ class AboutAdmin(SummernoteModelAdmin):
 class CollaborateRequestAdmin(admin.ModelAdmin):
 
     list_display = ('message', 'read',)
+
+
+@admin.register(LeaveComment)
+class LeaveComment(admin.ModelAdmin):
+
+    list_display = ('name', 'email', 'comment', 'approved', 'created_on')

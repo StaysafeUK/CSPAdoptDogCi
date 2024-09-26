@@ -4,6 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
+    <!-- About Section -->
     <div class="row">
         <div class="col-12 col-md-4 text-center">
             {% if "placeholder" in about.profile_image.url %}
@@ -18,29 +19,33 @@
         </div>
     </div>
 
+    <!-- Last Updated Section -->
     <div class="row">
         <div class="col text-right">
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
 
+    <!-- Collaborate Form Section -->
     <div class="row justify-content-center">
         <div class="col text-center">
             <h2>Let's get these dogs homes!</h2>
             <p>I believe in the power of collective effort. Whether you have a dog sanctuary, or wish to adopt
                 your dog, I would be excited to hear from you. Fill out the form and we can get the ball rolling!</p>
 
-            <!-- Collaborate Form -->
             <form method="post" action="">
                 {% csrf_token %}
                 {{ collaborate_form | crispy }}
                 <input type="hidden" name="collaborate_submit" value="1">
                 <button class="btn btn-secondary" type="submit">Submit Request</button>
             </form>
+        </div>
+    </div>
 
-            <hr>
-
-            <!-- Leave Comment Form -->
+    <!-- Leave Comment Form Section -->
+    <div class="row justify-content-center mt-4">
+        <div class="col text-center">
+            <h4>Leave a Comment</h4>
             <form method="post" action="">
                 {% csrf_token %}
                 {{ leavecomment_form | crispy }}
@@ -50,32 +55,35 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-8 card mb-4 mt-3">
-            <h3>Leave Comments:</h3>
+    <!-- Comments Section -->
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-2 card mb-4">
+            <h3>Comments:</h3>
             <div class="card-body">
-                {% for comment in leavecomments %}
-                <div class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                    <p class="font-weight-bold">
-                        {{ comment.name }}
-                        <span class="font-weight-normal">
-                            {{ comment.created_on }}
-                        </span> wrote:
-                    </p>
-                    <div id="comment{{ comment.id }}">
-                        {{ comment.body | linebreaks }}
-                    </div>
-                    {% if not comment.approved and comment.name == user %}
-                    <p class="approval">
-                        This comment is awaiting approval
-                    </p>
-                    {% endif %}
-                    {% if user.is_authenticated and comment.name == user %}
-                    <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                    <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                    {% endif %}
-                </div>
-                {% endfor %}
+                {% if comments %}
+                    {% for comment in comments %}
+                        <div class="p-2 comments {% if not comment.approved and comment.email == user.email %} faded {% elif not comment.approved %} d-none {% endif %}">
+                            <p class="font-weight-bold">
+                                {{ comment.name }}
+                                <span class="font-weight-normal">
+                                    {{ comment.created_on|date:"M d, Y H:i" }}
+                                </span> wrote:
+                            </p>
+                            <div id="comment{{ comment.id }}">
+                                {{ comment.comment|linebreaks }}
+                            </div>
+                            {% if not comment.approved and comment.email == user.email %}
+                                <p class="approval">This comment is awaiting approval</p>
+                            {% endif %}
+                            {% if user.is_authenticated and comment.email == user.email %}
+                                <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No comments yet. Be the first to comment!</p>
+                {% endif %}
             </div>
         </div>
     </div>
