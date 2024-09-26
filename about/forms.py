@@ -7,7 +7,7 @@ class CollaborateForm(forms.ModelForm):
         model = CollaborateRequest
         fields = ('name', 'email', 'message')
 
-class leaveCommentForm(forms.ModelForm):
+class LeaveCommentForm(forms.ModelForm):
     class Meta:
         model = LeaveComment
         fields = ('name', 'email', 'comment')

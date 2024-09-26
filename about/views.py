@@ -1,54 +1,74 @@
-from django.shortcuts import render, redirect
-from .models import About
-from .forms import CollaborateForm, leaveCommentForm
+from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
+from .models import About, LeaveComment
+from .forms import CollaborateForm, LeaveCommentForm
 from django.contrib import messages
 
 def about_me(request):
     """
-    Renders the About page with CollaborateForm and leaveCommentForm.
+    Renders the About page with CollaborateForm and LeaveCommentForm, and lists comments.
     """
 
-    # POST request if statement 
     if request.method == "POST":
         collaborate_form = CollaborateForm(data=request.POST)
-        leavecomment_form = leaveCommentForm(data=request.POST)
+        leavecomment_form = LeaveCommentForm(data=request.POST)
 
+        # Handle Collaborate form submission
         if 'collaborate_submit' in request.POST and collaborate_form.is_valid():
             collaborate_form.save()
             messages.add_message(request, messages.SUCCESS, "Your request is received! I endeavour to respond within 3 working days.")
-            return redirect('about_me')  # Redirect to stop form submit
+            return redirect('about_me')  # Redirect to prevent form resubmission
 
+        # Handle Leave Comment form submission
         if 'leavecomment_submit' in request.POST and leavecomment_form.is_valid():
             leavecomment_form.save()
             messages.add_message(request, messages.SUCCESS, "Your comments are noted.")
-            return redirect('about_me')  
+            return redirect('about_me')  # Redirect after comment submission
 
     else:
         collaborate_form = CollaborateForm()
-        leavecomment_form = leaveCommentForm()
+        leavecomment_form = LeaveCommentForm()
 
+    # Fetch the 'About' content
     about = About.objects.all().order_by('-updated_on').first()
 
+    # If user is not logged in, show all comments
+    if not request.user.is_authenticated:
+        leavecomments = LeaveComment.objects.all().order_by("-created_on")
+    # If user is logged in, show all comments but only allow their comments to be editable
+    else:
+        leavecomments = LeaveComment.objects.all().order_by("-created_on")
+
     return render(
-        request, "about/about.html", { "about": about, "collaborate_form": collaborate_form, "leavecomment_form": leavecomment_form},)
+        request, "about/about.html", {
+            "about": about,
+            "collaborate_form": collaborate_form,
+            "leavecomment_form": leavecomment_form,
+            "leavecomments": leavecomments,  # Pass the comments to the template
+        }
+    )
 
-def leavecomment_edit(request):
+def leavecomment_edit(request, leavecomment_id):
     """
-    View to edit leavecomments (CRUD functionality to be added later).
+    View to edit LeaveComments (CRUD functionality can be expanded later).
     """
+    leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
+
     if request.method == "POST":
+        leavecomment_form = LeaveCommentForm(data=request.POST, instance=leavecomment)
 
-        queryset = Post.objects.filter(status=1)
-        post= get_object_or_404(queryset, slug=slug)
-        leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
-        leavecomment_form = LeaveCommentForm(data=request.POST)
-
-        if leavecomment_form.is_valid() and leavecomment.email == request.user:
-            leavecomment_form.save(commit=False)
-            leavecomment.post = post 
-            messages.add_message(request, messages.SUCCESS, "Your comments are noted.")
+        # Ensure only the comment owner can edit their comment
+        if leavecomment_form.is_valid() and leavecomment.email == request.user.email:
+            leavecomment_form.save()
+            messages.add_message(request, messages.SUCCESS, "Your comment has been updated.")
+            return HttpResponseRedirect(reverse('about_me'))
         else:
-            messages.add_message(request, messages.ERROR, "Error updating comment")
+            messages.add_message(request, messages.ERROR, "Error updating comment.")
     
-    return HttpResponseRedirect(reverse('about_me', ))
-    # You can expand this function later to include CRUD
+    else:
+        leavecomment_form = LeaveCommentForm(instance=leavecomment)
+
+    return render(request, "about/edit_comment.html", {
+        "leavecomment_form": leavecomment_form,
+        "leavecomment": leavecomment
+    })

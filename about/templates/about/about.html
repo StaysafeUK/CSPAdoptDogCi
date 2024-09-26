@@ -60,24 +60,24 @@
         <div class="col-md-8 offset-md-2 card mb-4">
             <h3>Comments:</h3>
             <div class="card-body">
-                {% if comments %}
-                    {% for comment in comments %}
-                        <div class="p-2 comments {% if not comment.approved and comment.email == user.email %} faded {% elif not comment.approved %} d-none {% endif %}">
+                {% if leavecomments %}
+                    {% for leavecomment in leavecomments %}
+                        <div class="p-2 comments">
                             <p class="font-weight-bold">
-                                {{ comment.name }}
+                                {{ leavecomment.name }}
                                 <span class="font-weight-normal">
-                                    {{ comment.created_on|date:"M d, Y H:i" }}
+                                    {{ leavecomment.created_on|date:"M d, Y H:i" }}
                                 </span> wrote:
                             </p>
-                            <div id="comment{{ comment.id }}">
-                                {{ comment.comment|linebreaks }}
+                            <div id="comment{{ leavecomment.id }}">
+                                {{ leavecomment.comment|linebreaks }}
                             </div>
-                            {% if not comment.approved and comment.email == user.email %}
+                            {% if not leavecomment.approved %}
                                 <p class="approval">This comment is awaiting approval</p>
                             {% endif %}
-                            {% if user.is_authenticated and comment.email == user.email %}
-                                <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                                <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                            {% if user.is_authenticated and leavecomment.email == user.email %}
+                                <button class="btn btn-delete" comment_id="{{ leavecomment.id }}">Delete</button>
+                                <button class="btn btn-edit" comment_id="{{ leavecomment.id }}">Edit</button>
                             {% endif %}
                         </div>
                     {% endfor %}
