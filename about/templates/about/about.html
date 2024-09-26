@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <!-- About Section -->
+    <!-- About Section with cloudinary image -->
     <div class="row">
         <div class="col-12 col-md-4 text-center">
             {% if "placeholder" in about.profile_image.url %}
@@ -19,14 +19,14 @@
         </div>
     </div>
 
-    <!-- Last Updated Section -->
+    <!-- Last Updated on -->
     <div class="row">
         <div class="col text-right">
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
 
-    <!-- Collaborate Form Section -->
+    <!-- Collaborate Form crispy_forms -->
     <div class="row justify-content-center">
         <div class="col text-center">
             <h2>Let's get these dogs homes!</h2>
@@ -42,11 +42,11 @@
         </div>
     </div>
 
-    <!-- Leave Comment Form Section -->
+    <!-- Leave Comment Form crispy forms -->
     <div class="row justify-content-center mt-4">
         <div class="col text-center">
             <h4>Leave a Comment</h4>
-            <form method="post" action="">
+            <form id="leavecommentForm" method="post" action="">
                 {% csrf_token %}
                 {{ leavecomment_form | crispy }}
                 <input type="hidden" name="leavecomment_submit" value="1">
@@ -55,29 +55,29 @@
         </div>
     </div>
 
-    <!-- Comments Section -->
+    <!-- Comments -->
     <div class="row mt-5">
         <div class="col-md-8 offset-md-2 card mb-4">
             <h3>Comments:</h3>
             <div class="card-body">
                 {% if leavecomments %}
                     {% for leavecomment in leavecomments %}
-                        <div class="p-2 comments">
+                        <div class="p-2 leavecomments">
                             <p class="font-weight-bold">
                                 {{ leavecomment.name }}
                                 <span class="font-weight-normal">
                                     {{ leavecomment.created_on|date:"M d, Y H:i" }}
                                 </span> wrote:
                             </p>
-                            <div id="comment{{ leavecomment.id }}">
+                            <div id="leavecomment{{ leavecomment.id }}">
                                 {{ leavecomment.comment|linebreaks }}
                             </div>
                             {% if not leavecomment.approved %}
                                 <p class="approval">This comment is awaiting approval</p>
                             {% endif %}
                             {% if user.is_authenticated and leavecomment.email == user.email %}
-                                <button class="btn btn-delete" comment_id="{{ leavecomment.id }}">Delete</button>
-                                <button class="btn btn-edit" comment_id="{{ leavecomment.id }}">Edit</button>
+                                <button class="btn btn-delete" leavecomment_id="{{ leavecomment.id }}">Delete</button>
+                                <button class="btn btn-edit" leavecomment_id="{{ leavecomment.id }}">Edit</button>
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -89,3 +89,7 @@
     </div>
 </div>
 {% endblock content %}
+{% block extras %}
+<script src="{% static 'js/leavecomments.js' %}"></script>
+{% endblock %}
+

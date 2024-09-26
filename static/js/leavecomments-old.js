@@ -1,25 +1,25 @@
-/* Select all edit buttons and form elements */
+// Select all edit buttons and form elements
 const editButtons = document.querySelectorAll(".btn-edit");
-const leavecommentText = document.getElementById("id_comment"); 
+const leavecommentText = document.getElementById("id_comment");  // Assuming this is the ID of the textarea for comment
 const leavecommentForm = document.getElementById("leavecommentForm");
 const submitButton = document.getElementById("submitButton");
 
-/* Initialize edit for each edit button */
+// Initialize edit functionality for each edit button
 editButtons.forEach(button => {
   button.addEventListener("click", (e) => {
     const leavecommentId = e.target.getAttribute("leavecomment_id");
     const leavecommentContent = document.getElementById(`leavecomment${leavecommentId}`).innerText;
 
-    /* Populate the comment content into the textarea */
+    // Populate the comment content into the textarea
     leavecommentText.value = leavecommentContent;
 
-    /* Change the submit button text to "Update" */
+    // Change the submit button text to "Update"
     submitButton.innerText = "Update";
 
-    /* Update the form's action attribute to point to the edit URL */
+    // Update the form's action attribute to point to the edit URL
     leavecommentForm.setAttribute("action", `/edit_leavecomment/${leavecommentId}/`);
 
-    /* Optionally, scroll to the comment form or highlight it */
+    // Optionally, scroll to the comment form or highlight it
     leavecommentForm.scrollIntoView({ behavior: "smooth" });
   });
 });

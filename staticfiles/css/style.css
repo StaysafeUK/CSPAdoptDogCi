@@ -96,15 +96,16 @@ body {
     color: #445261;
 }
 
+
 .profile-image {
-    width: 75%;
+    width: 100%;
     height: auto;       /*  aspect ratio */
     max-width: 100%;    /* Prevent overflow */
     object-fit: cover;  /* Ensures image fits */
     display: block;
     margin: 0 auto;     /* Center the image */
+    position: absolute;
 }
-
 
 
 .post-link:hover,
