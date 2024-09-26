@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <!-- About Section with cloudinary image -->
+    <!-- About Section -->
     <div class="row">
         <div class="col-12 col-md-4 text-center">
             {% if "placeholder" in about.profile_image.url %}
@@ -19,14 +19,14 @@
         </div>
     </div>
 
-    <!-- Last Updated on -->
+    <!-- Last Updated Section -->
     <div class="row">
         <div class="col text-right">
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
 
-    <!-- Collaborate Form crispy_forms -->
+    <!-- Collaborate Form Section -->
     <div class="row justify-content-center">
         <div class="col text-center">
             <h2>Let's get these dogs homes!</h2>
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <!-- Leave Comment Form crispy forms -->
+    <!-- Leave Comment Form Section -->
     <div class="row justify-content-center mt-4">
         <div class="col text-center">
             <h4>Leave a Comment</h4>
@@ -55,14 +55,14 @@
         </div>
     </div>
 
-    <!-- Comments -->
+    <!-- Comments Section -->
     <div class="row mt-5">
         <div class="col-md-8 offset-md-2 card mb-4">
             <h3>Comments:</h3>
             <div class="card-body">
                 {% if leavecomments %}
                     {% for leavecomment in leavecomments %}
-                        <div class="p-2 leavecomments">
+                        <div class="p-2 comments">
                             <p class="font-weight-bold">
                                 {{ leavecomment.name }}
                                 <span class="font-weight-normal">
@@ -76,8 +76,8 @@
                                 <p class="approval">This comment is awaiting approval</p>
                             {% endif %}
                             {% if user.is_authenticated and leavecomment.email == user.email %}
-                                <button class="btn btn-delete" leavecomment_id="{{ leavecomment.id }}">Delete</button>
-                                <button class="btn btn-edit" leavecomment_id="{{ leavecomment.id }}">Edit</button>
+                                <button class="btn btn-delete" comment_id="{{ leavecomment.id }}">Delete</button>
+                                <button class="btn btn-edit" comment_id="{{ leavecomment.id }}">Edit</button>
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -89,7 +89,3 @@
     </div>
 </div>
 {% endblock content %}
-{% block extras %}
-<script src="{% static 'js/leavecomments.js' %}"></script>
-{% endblock %}
-

@@ -60,6 +60,7 @@ def leavecomment_edit(request, leavecomment_id):
         # Ensure only the comment owner can edit their comment
         if leavecomment_form.is_valid() and leavecomment.email == request.user.email:
             leavecomment_form.save()
+            leavecomment.appoved = False
             messages.add_message(request, messages.SUCCESS, "Your comment has been updated.")
             return HttpResponseRedirect(reverse('about_me'))
         else:
