@@ -8,9 +8,9 @@
     <div class="row">
         <div class="col-12 col-md-4 text-center">
             {% if "placeholder" in about.profile_image.url %}
-                <img src="{% static 'images/nobody.jpg' %}" alt="placeholder image" class="profile_image">
+            <img src="{% static 'images/nobody.jpg' %}" alt="placeholder image" class="profile_image">
             {% else %}
-                <img src="{{ about.profile_image.url }}" alt="{{ about.title }}" width="85%" class="profile_image">
+            <img src="{{ about.profile_image.url }}" alt="{{ about.title }}" width="85%" class="profile_image">
             {% endif %}
         </div>
         <div class="col-12 col-md-8">
@@ -61,29 +61,50 @@
             <h3>Comments:</h3>
             <div class="card-body">
                 {% if leavecomments %}
-                    {% for leavecomment in leavecomments %}
-                        <div class="p-2 comments">
-                            <p class="font-weight-bold">
-                                {{ leavecomment.name }}
-                                <span class="font-weight-normal">
-                                    {{ leavecomment.created_on|date:"M d, Y H:i" }}
-                                </span> wrote:
-                            </p>
-                            <div id="leavecomment{{ leavecomment.id }}">
-                                {{ leavecomment.comment|linebreaks }}
-                            </div>
-                            {% if not leavecomment.approved %}
-                                <p class="approval">This comment is awaiting approval</p>
-                            {% endif %}
-                            {% if user.is_authenticated and leavecomment.email == user.email %}
-                                <button class="btn btn-delete" comment_id="{{ leavecomment.id }}">Delete</button>
-                                <button class="btn btn-edit" comment_id="{{ leavecomment.id }}">Edit</button>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+                {% for leavecomment in leavecomments %}
+                <div class="p-2 comments">
+                    <p class="font-weight-bold">
+                        {{ leavecomment.name }}
+                        <span class="font-weight-normal">
+                            {{ leavecomment.created_on|date:"M d, Y H:i" }}
+                        </span> wrote:
+                    </p>
+                    <div id="leavecomment{{ leavecomment.id }}">
+                        {{ leavecomment.comment|linebreaks }}
+                    </div>
+                    {% if not leavecomment.approved %}
+                    <p class="approval">This comment is awaiting approval</p>
+                    {% endif %}
+                    {% if user.is_authenticated and leavecomment.email == user.email %}
+                    <button class="btn btn-delete" comment_id="{{ leavecomment.id }}">Delete</button>
+                    <button class="btn btn-edit" comment_id="{{ leavecomment.id }}">Edit</button>
+                    {% endif %}
+                </div>
+                {% endfor %}
                 {% else %}
-                    <p>No comments yet. Be the first to comment!</p>
+                <p>No comments yet. Be the first to comment!</p>
                 {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="leavecommentdeleteModal" tabindex="-1" aria-labelledby="leavecommentdeleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="leavecommentdeleteModalLabel">Delete Comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form id="deleteConfirmLeaveCommentForm" method="POST" action="">
+                    {% csrf_token %}
+                <a id="deleteConfirmLeaveComment" href="#" action="" method="POST" class="btn btn-danger">Delete</a>
+                </form>
             </div>
         </div>
     </div>

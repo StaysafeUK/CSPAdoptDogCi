@@ -50,7 +50,7 @@ def about_me(request):
 
 def leavecomment_edit(request, leavecomment_id):
     """
-    View to edit LeaveComments (CRUD functionality can be expanded later).
+    View to edit LeaveComments
     """
     leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
 
@@ -79,18 +79,22 @@ def leavecomment_delete(request, leavecomment_id):
     """
     leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
 
-    # Ensure the request is a POST request and that the user is authorized to delete the comment
-    if request.method == "POST":
-        # Check that the logged-in user's email matches the comment's email (comment owner)
+    # Check if the user is authenticated
+    if not request.user.is_authenticated:
+        messages.add_message(request, messages.ERROR, "You need to be logged in to delete a comment.")
+        return redirect('about_me')  # Redirect to the about page if not authenticated
+    print(request.method)
+    if request.method == "GET":
+        
         if leavecomment.email == request.user.email:
             leavecomment.delete()
             messages.add_message(request, messages.SUCCESS, "Your comment has been deleted.")
         else:
             messages.add_message(request, messages.ERROR, "You are not authorized to delete this comment.")
         
-        # Redirect to the 'about_me' page or another appropriate page
-        return redirect(reverse('about_me'))
+        return redirect('about_me')  #
 
-    # In case of a non-POST request, redirect or handle as needed
     messages.add_message(request, messages.ERROR, "Invalid request method.")
-    return redirect(reverse('about_me'))
+    return redirect('about_me')  # Use redirect() here as well
+
+    

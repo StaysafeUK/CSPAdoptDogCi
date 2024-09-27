@@ -28,17 +28,16 @@ editButtons.forEach(button => {
   });
 });
 
-// Uncomment the deletion functionality if needed
-/*
+/* Uncomment the deletion functionality if needed */
+
 const deleteButtons = document.querySelectorAll(".btn-delete");
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteConfirm = document.getElementById("deleteConfirm");
+const deleteModal = new bootstrap.Modal(document.getElementById("leavecommentdeleteModal"));
+const deleteConfirm = document.getElementById("deleteConfirmLeaveComment"); // Updated ID
 
 deleteButtons.forEach(button => {
     button.addEventListener("click", (e) => {
-      const leavecommentId = button.getAttribute("comment_id");
-      deleteConfirm.href = `/delete_leavecomment/${leavecommentId}/`;
-      deleteModal.show();
+        const leavecommentId = button.getAttribute("comment_id");
+        deleteConfirm.href = `/about/delete_leavecomment/${leavecommentId}/`; // Updated URL
+        deleteModal.show();
     });
 });
-*/
