@@ -72,3 +72,25 @@ def leavecomment_edit(request, leavecomment_id):
     return render(request, "about/edit_comment.html", {
         "leavecomment_form": leavecomment_form, "leavecomment": leavecomment
     })
+
+def leavecomment_delete(request, leavecomment_id):
+    """
+    View to delete LeaveComments. Ensures only the comment owner can delete their comment.
+    """
+    leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
+
+    # Ensure the request is a POST request and that the user is authorized to delete the comment
+    if request.method == "POST":
+        # Check that the logged-in user's email matches the comment's email (comment owner)
+        if leavecomment.email == request.user.email:
+            leavecomment.delete()
+            messages.add_message(request, messages.SUCCESS, "Your comment has been deleted.")
+        else:
+            messages.add_message(request, messages.ERROR, "You are not authorized to delete this comment.")
+        
+        # Redirect to the 'about_me' page or another appropriate page
+        return redirect(reverse('about_me'))
+
+    # In case of a non-POST request, redirect or handle as needed
+    messages.add_message(request, messages.ERROR, "Invalid request method.")
+    return redirect(reverse('about_me'))
