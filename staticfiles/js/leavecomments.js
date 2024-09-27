@@ -1,6 +1,6 @@
 // Select all edit buttons and form elements
 const editButtons = document.querySelectorAll(".btn-edit");
-const leavecommentText = document.getElementById("id_comment");  // Make sure this ID matches the textarea's ID
+const leavecommentText = document.getElementById("id_comment");  // This ID should match the Django form field's ID
 const leavecommentForm = document.getElementById("leavecommentForm");
 const submitButton = leavecommentForm.querySelector("button[type='submit']");  // Target the submit button within the form
 
@@ -15,9 +15,11 @@ editButtons.forEach(button => {
 
     // Change the submit button text to "Update"
     submitButton.innerText = "Update";
+    console.log(`Form action updated to: '/about/edit_leavecomment/${leavecommentId}/`);
 
     // Update the form's action attribute to point to the edit URL
-    leavecommentForm.setAttribute("action", `/edit_leavecomment/${leavecommentId}/`);
+    commentForm.setAttribute("action", `/about/edit_leavecomment/${commentId}/`);
+
 
     // Scroll to the comment form or highlight it
     leavecommentForm.scrollIntoView({ behavior: "smooth" });
