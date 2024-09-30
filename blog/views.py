@@ -76,6 +76,7 @@ def post_detail(request, slug):
 def comment_edit(request, slug, comment_id):
     """
     view to edit comments
+     Display an individual :model:`blog.Post`.
     """
     if request.method == "POST":
 
@@ -98,6 +99,7 @@ def comment_edit(request, slug, comment_id):
 def comment_delete(request, slug, comment_id):
     """
     view to delete comment
+     Deletes an instance of an individual :model:`blog.Post`.
     """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
@@ -112,6 +114,10 @@ def comment_delete(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
        
 def search_sanctuaries(request):
+    """
+    Searches Sanctuaries from 
+     Display an individual :model:`blog.Sactuary`.
+    """
     if request.method == "POST":
         searched = request.POST['searched']
         sanctuaries = Sanctuary.objects.filter(sanct_name__icontains=searched)

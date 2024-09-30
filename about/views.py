@@ -9,6 +9,7 @@ from .models import About, LeaveComment
 def about_me(request):
     """
     Renders the About page with CollaborateForm and LeaveCommentForm, and lists comments.
+    Displays an instance of :model:`about.About`.
     """
 
     if request.method == "POST":
@@ -53,6 +54,7 @@ def about_me(request):
 def leavecomment_edit(request, leavecomment_id):
     """
     View to edit LeaveComments
+    Displays an instance of :model:`about.About`.
     """
     leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
 
@@ -78,6 +80,7 @@ def leavecomment_edit(request, leavecomment_id):
 def leavecomment_delete(request, leavecomment_id):
     """
     View to delete LeaveComments. Ensures only the comment owner can delete their comment.
+    Displays an instance of :model:`about.About`.
     """
     leavecomment = get_object_or_404(LeaveComment, pk=leavecomment_id)
 
