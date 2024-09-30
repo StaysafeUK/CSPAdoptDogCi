@@ -1,12 +1,12 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #f9fafb;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #4b4b4f;
 }
 
 .green-o {
@@ -34,16 +34,16 @@ body {
     background-color: transparent;
 }
 
-.image-container {
+.image-contain {
     position: relative;
 }
 
-.image-flash {
+.image-notify {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #18815c;
 }
 
 .scale {
@@ -52,7 +52,7 @@ body {
 }
 
 .author {
-    color: white;
+    color: #FFF;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -77,19 +77,31 @@ body {
     overflow: hidden;
 }
 
-.masthead-image:after {
+/*masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
     right: 90%;
     height: 100%;
-    width: 150%;
+    width: 110%;
     background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    transform: rotate(30deg);
     z-index: 100;
 }
+
+*/
+.masthead-image:after {
+    width: 130%;
+    height: 100px;
+    background-color: #445261;
+    border-radius: 50% 50% 0 0;
+    margin-top: -50px;
+}
+
+
+
 
 .post-link {
     text-decoration: none;
@@ -123,14 +135,14 @@ body {
     color: lightgray;
 }
 
-.btn-signup,
+.btn-sign,
 .btn-edit {
-    background-color: #188181;
+    background-color: #188167;
     color: #fff;
 }
 
-.btn-signup:hover,
-.btn-signup:active {
+.btn-sign:hover,
+.btn-sign:active {
     background-color: #fff;
     color: #23BBBB;
 }
@@ -169,5 +181,5 @@ body {
 }
 
 .approval {
-    color: rgb(222, 146, 168);
+    color: rgb(232, 36, 22);
 }

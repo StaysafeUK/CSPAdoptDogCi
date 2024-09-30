@@ -13,7 +13,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
+                            <div class="image-contain">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                   alt="placeholder image">
@@ -21,7 +21,7 @@
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}"
                                   alt="{{ post.title }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="image-notify">
                                     <!-- Border around author -->
                                     <p class="author border p-2">Author: {{ post.author }}</p>
                                 </div>

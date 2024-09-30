@@ -77,31 +77,19 @@ body {
     overflow: hidden;
 }
 
-/*masthead-image:after {
+.masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
     right: 90%;
     height: 100%;
-    width: 110%;
+    width: 150%;
     background: #445261;
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    transform: rotate(30deg);
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
     z-index: 100;
 }
-
-*/
-.masthead-image:after {
-    width: 130%;
-    height: 100px;
-    background-color: #445261;
-    border-radius: 50% 50% 0 0;
-    margin-top: -50px;
-}
-
-
-
 
 .post-link {
     text-decoration: none;

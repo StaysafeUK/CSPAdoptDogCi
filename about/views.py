@@ -35,7 +35,7 @@ def about_me(request):
     # If user is not logged in, show all comments
     if not request.user.is_authenticated:
         leavecomments = LeaveComment.objects.all().order_by("-created_on")
-    # If user is logged in, show all comments but only allow their comments to be editable
+    # If user is logged in, show all comments but only allow their comments for edit
     else:
         leavecomments = LeaveComment.objects.all().order_by("-created_on")
 
@@ -92,7 +92,7 @@ def leavecomment_delete(request, leavecomment_id):
         else:
             messages.add_message(request, messages.ERROR, "You are not authorized to delete this comment.")
         
-        return redirect('about_me')  #
+        return redirect('about_me')  #redirect to about page
 
     messages.add_message(request, messages.ERROR, "Invalid request method.")
     return redirect('about_me')  # Use redirect() here as well
