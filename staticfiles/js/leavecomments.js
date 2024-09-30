@@ -35,6 +35,7 @@ const deleteModal = new bootstrap.Modal(document.getElementById("leavecommentdel
 const deleteConfirm = document.getElementById("deleteConfirmLeaveComment"); // Updated ID
 
 deleteButtons.forEach(button => {
+  /* Arrow function for For loop to confirm deletion and show Modal in About.html */
     button.addEventListener("click", (e) => {
         const leavecommentId = button.getAttribute("comment_id");
         deleteConfirm.href = `/about/delete_leavecomment/${leavecommentId}/`; // Updated URL
