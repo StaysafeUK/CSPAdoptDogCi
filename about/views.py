@@ -88,7 +88,7 @@ def leavecomment_delete(request, leavecomment_id):
         
         if leavecomment.email == request.user.email:
             leavecomment.delete()
-            messages.add_message(request, messages.SUCCESS, "Your comment has been deleted.")
+            messages.add_message(request, messages.WARNING, "Your comment has been deleted.")
         else:
             messages.add_message(request, messages.ERROR, "You are not authorized to delete this comment.")
         
