@@ -195,8 +195,8 @@ border-radius: 0 50% 50% 0;
     color: rgb(232, 36, 22);
 }
 
+.link-social,
 .link-social:hover,
 .link-social:active {
-    background-color: #fff;
     color: #FFF;
 }
