@@ -5,13 +5,17 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 from django.contrib.auth.decorators import login_required
 
-
+## Commented out for Email Authorisation and authentication ##
 #from django.contrib.auth.tokens import PasswordResetTokenGenerator
 #from django.utils.encoding import force_str
 
 # Create your models here.
 
 class Post(models.Model):
+    """
+    Stores a single blog post related to :model:`auth.User`
+    Stores a single Sanctuary related to :model:`Santuary.id`
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
@@ -38,6 +42,10 @@ class Post(models.Model):
 
 # Comment Model 
 class Comment(models.Model):
+    """
+    stores a single record from Post to comment :model:`Post.author``
+    stores a single record from model:auth.User`
+    """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
@@ -52,6 +60,9 @@ class Comment(models.Model):
 
  # Sanctuary Model       
 class Sanctuary(models.Model):
+    """
+    Stores fields from Sanctuary :model:`Santuary`
+    """
     sanct_name = models.CharField(max_length=200)
     sanct_address = models.TextField()
     sanct_postcode = models.CharField(max_length=15, unique=True)

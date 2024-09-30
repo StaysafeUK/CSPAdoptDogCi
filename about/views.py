@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
-from .models import About, LeaveComment
-from .forms import CollaborateForm, LeaveCommentForm
 from django.contrib import messages
+from .forms import CollaborateForm, LeaveCommentForm
+from .models import About, LeaveComment
+
+
 
 def about_me(request):
     """
