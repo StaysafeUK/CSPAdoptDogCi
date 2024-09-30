@@ -11,7 +11,7 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
-
+# CollaborateRequest on About Page
 class CollaborateRequest(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
@@ -21,6 +21,7 @@ class CollaborateRequest(models.Model):
     def __str__(self):
         return f"Collaboration request from {self.name}" 
 
+# Leavecomment Model for CRUD operation
 class LeaveComment(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()

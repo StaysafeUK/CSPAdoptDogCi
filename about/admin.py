@@ -13,7 +13,7 @@ class CollaborateRequestAdmin(admin.ModelAdmin):
 
     list_display = ('message', 'read',)
 
-
+# LEave Comment admin fields
 @admin.register(LeaveComment)
 class LeaveComment(admin.ModelAdmin):
 

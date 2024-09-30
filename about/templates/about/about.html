@@ -19,14 +19,14 @@
         </div>
     </div>
 
-    <!-- Last Updated Section -->
+    <!-- Shows Updated Section -->
     <div class="row">
         <div class="col text-right">
             <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
         </div>
     </div>
 
-    <!-- Collaborate Form Section -->
+    <!-- Shows Collaborate Form Section -->
     <div class="row justify-content-center">
         <div class="col text-center">
             <h2>Let's get these dogs homes!</h2>
@@ -75,6 +75,7 @@
                     {% if not leavecomment.approved %}
                     <p class="approval">This comment is awaiting approval</p>
                     {% endif %}
+                    <!-- Only shows btn-delete and btn-edit if the user is authenticated and is user.email-->
                     {% if user.is_authenticated and leavecomment.email == user.email %}
                     <button class="btn btn-delete" comment_id="{{ leavecomment.id }}">Delete</button>
                     <button class="btn btn-edit" comment_id="{{ leavecomment.id }}">Edit</button>
@@ -88,6 +89,7 @@
         </div>
     </div>
 </div>
+<!-- Modal called by JS leavecommentsjre.js script-->
 <div class="modal fade" id="leavecommentdeleteModal" tabindex="-1" aria-labelledby="leavecommentdeleteModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
