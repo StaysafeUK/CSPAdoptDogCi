@@ -125,6 +125,7 @@ def dog_detail(request, slug):
     return render(request, 'blog/dog_detail.html', {'dog': dog})
 
 #############################################################################
+####### View for Email Authentication and registration for SendGrid #########
 # def signup(request):
 #     """
 #     View for signing up a new user.

@@ -36,7 +36,7 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
-
+# Comment Model 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
@@ -50,7 +50,7 @@ class Comment(models.Model):
     class Meta:
         ordering = ["created_on"]   
 
-        
+ # Sanctuary Model       
 class Sanctuary(models.Model):
     sanct_name = models.CharField(max_length=200)
     sanct_address = models.TextField()
@@ -62,7 +62,7 @@ class Sanctuary(models.Model):
     def __str__(self):
         return f"name of sanctuary: {self.sanct_name}"
 
-# #TEST 
+# #TOKEN GENERATOR for email authentication and authorisation currently not used 
 
 # class TokenGenerator(PasswordResetTokenGenerator):
 #     def _make_hash_value(self, user, timestamp):

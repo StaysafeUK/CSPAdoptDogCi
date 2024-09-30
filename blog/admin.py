@@ -7,7 +7,7 @@ admin.site.register(Comment)
 admin.site.register(Sanctuary)
 
 @admin.register(Post)
-
+# add to Summernote in Admin pageds 
 class PostAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status')

@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- Search display showing Santuaries and dogs in those Sanctuaries-->
 <center>
     {% if searched %}
     <h1>You searched for "{{ searched }}"</h1>
     <br />
     {% if sanctuaries %}
+    <!-- For loop sanctuary in Sanctuaries-->
     {% for sanctuary in sanctuaries %}
     <div class="col-md-6 card mb-4 mt-3 left top">
         <div class="card-body">
             <h4 class="mt-3">Sanctuary Details</h4>
+            <!-- Builds a Table of Sanctuary details-->
             <table class="table table-light table-striped">
                 <tbody>
                     <tr>
@@ -71,11 +74,12 @@
             {% else %}
             <p>No dogs currently available at this sanctuary.</p>
             {% endif %}
-        </div> <!-- Close card-body -->
-    </div> <!-- Close col-md-6 card -->
+        </div> 
+    </div> 
     <br />
     {% endfor %}
     {% else %}
+    <!-- Displays No Sanctuaries found if search returns no results-->
     <p>No sanctuaries found matching "{{ searched }}".</p>
     {% endif %}
     {% else %}
