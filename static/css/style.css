@@ -92,6 +92,17 @@ body {
 }
 
 */
+.masthead-image::after {
+position: absolute;
+top: 0%;
+right: 0;
+width: 90%;
+height: 100%;
+background: inherit;
+border-radius: 0 50% 50% 0;
+} 
+
+/*
 .masthead-image:after {
     width: 130%;
     height: 100px;
@@ -100,7 +111,7 @@ body {
     margin-top: -50px;
 }
 
-
+*/
 
 
 .post-link {
