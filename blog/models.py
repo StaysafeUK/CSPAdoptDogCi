@@ -43,8 +43,8 @@ class Post(models.Model):
 # Comment Model 
 class Comment(models.Model):
     """
-    stores a single record from Post to comment :model:`Post.author``
-    stores a single record from model:auth.User`
+    stores a single record from Post to comment :model:`Post.author`.
+    stores a single record from model:auth.User`.
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
@@ -61,7 +61,7 @@ class Comment(models.Model):
  # Sanctuary Model       
 class Sanctuary(models.Model):
     """
-    Stores fields from Sanctuary :model:`Santuary`
+    Stores fields from Sanctuary :model:`Santuary`.
     """
     sanct_name = models.CharField(max_length=200)
     sanct_address = models.TextField()
