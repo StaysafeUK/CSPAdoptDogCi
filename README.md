@@ -261,7 +261,7 @@ I managed to get email authentication working locally from my GitPod environment
 
 ## 5. UX/UI
 
-### AdoptDog CSS Colours 
+### AdoptDog CSS Colors 
 
 <div>
 <img src="documentation/diagrams/adopdog-css-colours.webp" alt="AdoptDog CSS Colours Diagram">
@@ -270,7 +270,7 @@ I managed to get email authentication working locally from my GitPod environment
 
 ## User Experience Design
 
-## 6. WIREFRAMES
+## 6. WIRE FRAMES
 
 ## AdoptDog Landing Page
 
