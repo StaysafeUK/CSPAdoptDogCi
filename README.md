@@ -236,7 +236,7 @@ The registration page is where users sign up to the site so they have the abilit
 <img src="documentation/images/registrationpage-adoptdog.webp" alt="AdoptDog Registration page">
 </div>
 
-### Sign in Page *
+### Sign in Page 
 
 The sign in page is so users can be authenticated to the site so they have the ability to leave comments for dogs or the site.  I started to add email authentication using SendGrid relay and Django-Auth for additional security however this is now a future and will NOT be included in the three iterations for this project.  This will be discussed further in the Future Features Section.
 
@@ -419,6 +419,10 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 
 ## 10. TECHNOLOGIES
 
+### Hosting 
+Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API.      
+
+
 ### Languages
 - <a href="https://dev.w3.org/html5/spec-LC" target="_blank">HTML 5</a>
 - <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank">CSS3</a> 
@@ -426,8 +430,6 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 - <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown Language</a>
 - <a href="https://jquery.com/" target="_blank">Jquery</a>
 - <a href="https://www.python.org/" target="_blank">Python</a>
-
-[6] "Python"
 
 ### Frameworks, Libraries, API's and other Programs/Websites Used
 
@@ -449,6 +451,7 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 - <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
 - <a href="https://git-scm.com/" target="_blank">Git</a>
 - <a href="https://github.com/" target="_blank">Github</a>
+- <a href="https://heroku.com" target="_blank">Heroku</a>
 
 - <a href="https://docs.gunicorn.org/en/20.1.0/" target="_blank">gunicorn = 20.1.0</a>
 - <a href="https://oauthlib.readthedocs.io/en/latest/" target="_blank">oauthlib = 3.2.2</a>
