@@ -3,6 +3,9 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class About(models.Model):
+    """
+    About Model
+    """
     title = models.CharField(max_length=200)
     profile_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
@@ -11,8 +14,11 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
-# CollaborateRequest on About Page
+
 class CollaborateRequest(models.Model):
+    """
+    CollaborateRequest on About Page
+    """
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
@@ -20,8 +26,9 @@ class CollaborateRequest(models.Model):
 
     def __str__(self):
         return f"Collaboration request from {self.name}" 
-
-# Leavecomment Model for CRUD operation
+    """
+     Leavecomment Model for CRUD operation
+    """
 class LeaveComment(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
