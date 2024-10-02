@@ -22,7 +22,7 @@
     + [Landing Page](#landing-page)
     + [About Page](#about-page)
     + [Registration Page](#registration-page)
-    + [Sign in Page *](#sign-in-page--)
+    + [Sign in Page](#sign-in-page)
     + [Tabular Display of Information from Database](#tabular-display-of-information-from-database)
     + [Comments with CRUD functionality for Dogs and Site](#comments-with-crud-functionality-for-dogs-and-site)
     + [Collaboration form](#collaboration-form)
@@ -54,11 +54,13 @@
   * [Database](#database)
   * [Deploying to Heroku](#deploying-to-heroku)
   * [10. TECHNOLOGIES](#10-technologies)
+    + [Hosting](#hosting)
     + [Languages](#languages)
     + [Frameworks, Libraries, API's and other Programs/Websites Used](#frameworks--libraries--api-s-and-other-programs-websites-used)
   * [Software](#software)
   * [11. MEDIA](#11-media)
 - [END OF README.md](#end-of-readmemd)
+
 
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
@@ -420,7 +422,7 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 ## 10. TECHNOLOGIES
 
 ### Hosting 
-Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API.      
+Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed rendered throughout this development process using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API.      
 
 
 ### Languages
