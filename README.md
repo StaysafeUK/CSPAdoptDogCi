@@ -53,6 +53,10 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+<div>
+<img src="documentation/images/adoptdog-screens.webp" alt="AdoptDog U-DEV">
+</div>
+
 
 ## 1. OVERVIEW
 
@@ -332,25 +336,25 @@ Borders are displayed around the card-text using **border p-2**
 ## AdoptDog Landing Page
 
 <div>
-<img src="documentation/wireframes/adoptdog-landingpage.webp" alt="AdoptDog Landing page wireframe">
+<img src="documentation/wireframes/adoptdog-landingpage.webp" alt="AdoptDog Landing page wire frame">
 </div>
 
 ## AdoptDog Selection-view
 
 <div>
-<img src="documentation/wireframes/adoptdog-selection-view.webp" alt="AdoptDog Selection-view wireframe">
+<img src="documentation/wireframes/adoptdog-selection-view.webp" alt="AdoptDog Selection-view wire frame">
 </div>
 
 ## AdoptDog Registration
 
 <div>
-<img src="documentation/wireframes/adoptdog-registration.webp" alt="AdoptDog Registration page wireframe">
+<img src="documentation/wireframes/adoptdog-registration.webp" alt="AdoptDog Registration page wire frame">
 </div>
 
 ## AdoptDog Search
 
 <div>
-<img src="documentation/wireframes/adoptdog-search.webp" alt="AdoptDog Registration page wireframe">
+<img src="documentation/wireframes/adoptdog-search.webp" alt="AdoptDog Registration page wire frame">
 </div>
 
 ## 7. ENTITY RELATIONSHIP DIAGRAMS
