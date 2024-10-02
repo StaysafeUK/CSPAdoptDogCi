@@ -331,27 +331,51 @@ Borders are displayed around the card-text using **border p-2**
 
 ## User Experience Design
 
+### Navigation
+
+Navigation is key to well defined user friendly site,  all pages on the site can be accessed from the navbar defined in Base.html which extends to each of the templates on the About and Blog application.  On smaller screens such as mobile,  the burger bar comes into play where the links are listed.
+
+### User Authentication
+
+User Authentication has been used throughout this project from the onset, defined in the DTL (Django Template Language) to give access once the users has been logged in,  such as leaving comments about dogs or the site.  Once a user is authenticated they have the ability to leave, edit and delete a comment.
+
+### Pagination 
+
+Pagination is used to allow multiple database entries of Posts/Dogs using the Previous and Next Buttons,  this enables the user not to get over whelmed with the potential of having hundreds/thousands of Dogs to view.
+
+### Notification of Viewing text box
+
+When a user is accessing a text field this is highlighted to show what field is active, this comes into play when using the edit button to edit a comment on the comments for dogs or leavecomment for the website.
+
 ## 6. WIRE FRAMES
 
-## AdoptDog Landing Page
+The wire frames below are the initial design conception before coding began,  These diagrams show two different view points.
+
+- Mobile Display 
+- Full screen Web Browser
+
+The wire frame images have not been updated since coding began, and throughout the coding experience some features where added during the coding stage,  such as the search sanctuaries tabular display.  The leavecomments model was also added after the Wire frame stage to include custom CRUD manipulation of data provided by a user comment for the About Application.
+
+
+### AdoptDog Landing Page
 
 <div>
 <img src="documentation/wireframes/adoptdog-landingpage.webp" alt="AdoptDog Landing page wire frame">
 </div>
 
-## AdoptDog Selection-view
+### AdoptDog Selection-view
 
 <div>
 <img src="documentation/wireframes/adoptdog-selection-view.webp" alt="AdoptDog Selection-view wire frame">
 </div>
 
-## AdoptDog Registration
+### AdoptDog Registration
 
 <div>
 <img src="documentation/wireframes/adoptdog-registration.webp" alt="AdoptDog Registration page wire frame">
 </div>
 
-## AdoptDog Search
+### AdoptDog Search
 
 <div>
 <img src="documentation/wireframes/adoptdog-search.webp" alt="AdoptDog Registration page wire frame">
@@ -359,14 +383,18 @@ Borders are displayed around the card-text using **border p-2**
 
 ## 7. ENTITY RELATIONSHIP DIAGRAMS
 
-## Full Entity relationship Diagram of Django Models
+### Full Entity relationship Diagram of Django Models
+
+The entity diagram was created at the design phase of the project,  As mentioned above an additional model of leavecomments has been added during the User Story phase to give the ability for CRUD functionality,  this was achieved by creating an independent table with no foreign keys. The footer has also been modified to show Font Awesome Icons of clickable links to the various social media platforms.
+
+Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Database,  The Sanctuary model has a one to many relationship, extending the Post Model to have the ability to select a Sanctuary for a Dog when created in the Admin Portal.
 
 <div>
 <img src="documentation/diagrams/erd_models.webp" alt="AdoptDog Full Entity Relationship Diagram">
 </div>
 
 
-## AdoptDog Draw.io Entity Relationship Diagram V1.6
+### AdoptDog Draw.io Entity Relationship Diagram V1.6
 <div>
 <img src="documentation/diagrams/adoptdog-erd_1.6.webp" alt="AdoptDog Entity Relationship Diagram">
 </div>
@@ -380,6 +408,54 @@ Borders are displayed around the card-text using **border p-2**
 ## Deploying to Heroku
 
 ## 10. TECHNOLOGIES
+
+### Languages
+- <a href="https://dev.w3.org/html5/spec-LC" target="_blank">HTML 5</a>
+- <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank">CSS3</a> 
+- <a href="https://docs.djangoproject.com/en/5.1/ref/templates/language" target="_blank">Django Template Language</a>
+- <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank">Markdown Language</a>
+- <a href="https://jquery.com/" target="_blank">Jquery</a>
+- <a href="https://www.python.org/" target="_blank">Python</a>
+
+[6] "Python"
+
+### Frameworks, Libraries, API's and other Programs/Websites Used
+
+- <a href="https://asgi.readthedocs.io/en/latest/" target="_blank">asgiref = 3.8.1</a>
+- <a href="https://balsamq.com" target="_blank">Balsamiq</a>
+- <a href="https://cloudinary.com/" target="_blank">Cloudinary = 1.36.0</a>
+- <a href="https://django-crispy-forms.readthedocs.io/en/latest/" target="_blank">Crispy bootstrap5 = 0.7</a>
+- <a href="https://cloudinary.com/" target="_blank">dj3-cloudinary-storage = 0.0.6</a>
+- <a href="https://www.djangoproject.com/" target="_blank">Django = 4.2.16</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-allauth = 0.57.2"</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-allauth = 0.57.2</a>
+- <a href="https://django-crispy-forms.readthedocs.io/en/latest/" target="_blank">django-crispy-forms = 2.3</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-extensions = 3.2.3</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-phone-field = 1.8.1</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-phonenumber-field = 8.0.0</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-phonenumbers = 1.0.1</a>
+- <a href="https://www.djangoproject.com/" target="_blank">django-summernote = 0.8.20.0</a>
+
+- <a href="https://app.diagrams.net/" target="_blank">Draw.io</a>
+- <a href="https://git-scm.com/" target="_blank">Git</a>
+- <a href="https://github.com/" target="_blank">Github</a>
+
+- <a href="https://docs.gunicorn.org/en/20.1.0/" target="_blank">gunicorn = 20.1.0</a>
+- <a href="https://oauthlib.readthedocs.io/en/latest/" target="_blank">oauthlib = 3.2.2</a>
+
+- <a href="https://pypi.org/project/phonenumbers/" target="_blank">phonenumbers = 8.13.45</a>
+- <a href="https://pypi.org/project/psycopg2/" target="_blank">psycopg2 = 2.9.9</a>
+- <a href="https://pypi.org/project/pydotplus/" target="_blank">pydotplus = 2.0.2</a>
+- <a href="https://pypi.org/project/PyJWT/" target="_blank">PyJWT = 2.9.0</a>
+- <a href="https://pypi.org/project/pyparsing/" target="_blank">pyparsing = 3.1.4</a>
+- <a href="https://pypi.org/project/python-http-client/" target="_blank">python-http-client = 3.3.7</a>
+- <a href="https://pypi.org/project/python3-openid/" target="_blank">python3-openid = 3.2.0</a>
+- <a href="https://pypi.org/project/requests-oauthlib/" target="_blank">requests-oauthlib = 2.0.0</a>
+- <a href="https://pypi.org/project/sendgrid/" target="_blank">sendgrid = 6.11.0</a>
+- <a href="https://pypi.org/project/sqlparse/" target="_blank">sqlparse = 0.5.1</a>
+- <a href="https://pypi.org/project/starkbank-ecdsa/" target="_blank">starkbank-ecdsa = 2.2.0</a>
+- <a href="https://pypi.org/project/urllib3/" target="_blank">urllib3 = 1.26.20</a>
+- <a href="https://pypi.org/project/whitenoise/" target="_blank">whitenoise = 5.3.0</a>
 
 ## Software
 
