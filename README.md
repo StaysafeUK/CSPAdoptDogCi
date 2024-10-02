@@ -285,10 +285,45 @@ I managed to get email authentication working locally from my GitPod environment
 
 ### AdoptDog CSS Colors 
 
+The colors used for this site are bright and user friendly to the eye for an enjoyable user experience,  Colors are also derived from Bootstrap such as WARNING, ERROR and SUCCESS.  These colors are used for CRUD information messages on operations. From a UI perspective I wanted to keep the site clean and uncluttered.  
+
+**Text color scheme:   #4b4b4f**
+**light background:    #fff**
+**Dark Background:     #445261**
+**Main Background:     #F9FAFC**
+**Card:                Transparent**
+**image notification:  #18815c**
+**Author Box Text:     #fff**
+**Page-Link Hover is:  #E84610**
+**Button Sign is:      #23BBBB** 
+**link:                #23BBBB**
+**Button Like:         #E84610**
+**Button Hover:        #f22009**
+**Approval:            rgb(232, 36, 22)**
+
 <div>
-<img src="documentation/diagrams/adopdog-css-colours.webp" alt="AdoptDog CSS Colours Diagram">
+<img src="documentation/diagrams/adoptdog-css-color.webp" alt="AdoptDog CSS Colors Diagram">
 </div>
 
+### Fonts 
+
+Google Fonts have been used through this site to give the text a unique, readable fonts that add to the design. I opted for Inter Sans Serif, review the CSS to see the weighting of the font displayed.  
+
+**Font family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900**
+
+### Navbar 
+
+The Navbar uses **bootstrap@5.0.1 navbar-light navbar-expand-lg background light**,  the thinking here was bootstrap provides good viewpoint features when viewing on different device sizes. Therefore bootstrap has been used throughout this project.
+
+### Footer 
+
+The footer uses footer **mt-auto py-3 dark-bg** with favicons for the social media links **font-awesome/5.15.3**.  The text color is white.  
+
+### Borders 
+
+Borders are displayed around the card-text using **border p-2** 
+
+********** 
 
 ## User Experience Design
 
