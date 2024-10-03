@@ -8,7 +8,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
-# Model for Email Authentication and authorisation currently not used in this project
+
+
+# Model for Email Authentication and authorisation on currently not used in this project
 class SignupForm(UserCreationForm):
     email = forms.EmailField(max_length=200, help_text='Required')
     class Meta:

@@ -40,6 +40,7 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
+
 # Comment Model 
 class Comment(models.Model):
     """
@@ -58,7 +59,8 @@ class Comment(models.Model):
     class Meta:
         ordering = ["created_on"]   
 
- # Sanctuary Model       
+
+# Sanctuary Model       
 class Sanctuary(models.Model):
     """
     Stores fields from Sanctuary :model:`Santuary`.
