@@ -101,7 +101,9 @@ a). Sanctuaries looking to add their sanctuary and dogs that they currently have
 b). Families or singletons interested in finding a home for a pet dog(s) that is not working out in their home.  
 
 
-## 2. USER STORIES
+## 2. USER 
+
+**PROJECT BOARD:** <a href="https://github.com/users/StaysafeUK/projects/10/views/1" target="_blank">Adoptdog Kanban Project Board link </a>
 
 ### Epic
 
@@ -416,6 +418,7 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 ## 8. TESTING
 
 ### HTML W3C Testing
+<a href="https://validator.w3.org/" target="_blank">W3C Validator Link</a>
 
 The following section details the HTML testing using W3C Markup Validation service,  As Django uses DTL Django template language the HTML has to be validated after it is rendered on a page.  Below are the results
 
@@ -490,6 +493,13 @@ see image below.
 <div>
 <img src="documentation/Testing/CSSValidator.webp" alt="CSS W3C Validator">
 </div>
+
+### JavaScript Validator ###
+<a href="https://jshint.com/" target="_blank">JS Hint Link</a>
+
+
+
+
 
 
 
