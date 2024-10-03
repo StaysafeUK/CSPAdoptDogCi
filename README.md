@@ -1,11 +1,11 @@
   # ADOPTDOG PROJECT https://www.adoptdog.co.uk
   
   # Contents 
- - [ADOPTDOG PROJECT https://www.adoptdog.co.uk](#adoptdog-project-https---wwwadoptdogcouk)
+- [ADOPTDOG PROJECT https://www.adoptdog.co.uk](#adoptdog-project-https---wwwadoptdogcouk)
 - [Contents](#contents)
   * [1. OVERVIEW](#1-overview)
     + [Target Audience](#target-audience)
-  * [2. USER STORIES](#2-user-stories)
+  * [2. USER](#2-user)
     + [Epic](#epic)
     + [Site User](#site-user)
     + [Future Site User Stories](#future-site-user-stories)
@@ -50,15 +50,22 @@
     + [Full Entity relationship Diagram of Django Models](#full-entity-relationship-diagram-of-django-models)
     + [AdoptDog Draw.io Entity Relationship Diagram V1.6](#adoptdog-drawio-entity-relationship-diagram-v16)
   * [8. TESTING](#8-testing)
+    + [HTML W3C Testing](#html-w3c-testing)
+    + [CSS Validator###](#css-validator---)
+    + [JavaScript Validator](#javascript-validator)
+    + [Manual Testing](#manual-testing)
+    + [Python Testing](#python-testing)
   * [9. DEPLOYMENT](#9-deployment)
-  * [Database](#database)
   * [Deploying to Heroku](#deploying-to-heroku)
   * [10. TECHNOLOGIES](#10-technologies)
     + [Hosting](#hosting)
+    + [Database](#database)
+  * [env.py](#envpy)
     + [Languages](#languages)
     + [Frameworks, Libraries, API's and other Programs/Websites Used](#frameworks--libraries--api-s-and-other-programs-websites-used)
-  * [Software](#software)
   * [11. MEDIA](#11-media)
+  * [12. Credits](#12-credits)
+    + [URLS used in completing this project (in no particular order)](#urls-used-in-completing-this-project--in-no-particular-order-)
 - [END OF README.md](#end-of-readmemd)
 
 
@@ -516,28 +523,90 @@ commentID, bootstrap.  IF I have enough time due to the time constraints I am un
 </div>
 
 
+### Manual Testing ### 
+
+The manual testing sheet is viewed through Google sheets and is also available from the Testing directory in Documentation in PDF format. 
+
+<a href="https://docs.google.com/spreadsheets/d/1Ex07tTiJl3shKoZW47dtma-MLHzAJ41cSODCopETQVg/edit?usp=sharing" target="_blank">adoptdog manual testing v1_0</a>
 
 
+### Python Testing ###
+
+Python testing is performed by using <a href="https://pep8ci.herokuapp.com/" target="_blank">Python Pep8 CI Link</a> unfortunately I ran out of time to complete all these PEP requirements for Python.
+
+**admin.py about**
+
+<div>
+<img src="documentation/Testing/admin_py-validator-about.webp" alt="AdoptDog admin.py about">
+</div>
+
+**forms.py about***
+
+<div>
+<img src="documentation/Testing/forms_py-validator-about.webp" alt="AdoptDog forms.py about">
+</div>
+
+**models.py about**
+
+<div>
+<img src="documentation/Testing/models_py-validator-about.webp" alt="AdoptDog models.py about">
+</div>
+
+**urls.py about**
+
+<div>
+<img src="documentation/Testing/urls_py-validator-about.webp" alt="AdoptDog urls.py about">
+</div>
+
+**views.py about**
+
+<div>
+<img src="documentation/Testing/views_py-validator-about.webp" alt="AdoptDog views.py about">
+</div>
+
+********
+
+**admin.py blog**
+
+<div>
+<img src="documentation/Testing/admin_py-validator-blog.webp" alt="AdoptDog admin.py blog">
+</div>
+
+**forms.py blog***
+
+<div>
+<img src="documentation/Testing/forms_py-validator-blog.webp" alt="AdoptDog forms.py blog">
+</div>
+
+**models.py blog**
 
 
+<div>
+<img src="documentation/Testing/models_py-validator-blog.webp" alt="AdoptDog models.py blog">
+</div>
+
+**signupForm.py blog**
+
+<div>
+<img src="documentation/Testing/signupForm_py-validator-blog.webp" alt="AdoptDog models.py blog">
+</div>
 
 
+**urls.py blog**
 
+<div>
+<img src="documentation/Testing/urls_py-validator-blog.webp" alt="AdoptDog urls.py blog">
+</div>
 
+**views.py blog**
 
+views.py shows quite a few errors mainly due to the large amounts of code that are commented out,  this is due to
+wanting Sendgrid and email notifications when this site goes live in 7 weeks.  I will fix this before the site goes
+live.  I have my own method for commenting out large sections of code so apologise if this is not PEP 8 compliant.
 
-
-
-
-
-
-
-
-
-
-
-
-
+<div>
+<img src="documentation/Testing/views_py-validator-blog.webp" alt="AdoptDog views.py blog">
+</div>
 
 ## 9. DEPLOYMENT
 
@@ -549,8 +618,6 @@ commentID, bootstrap.  IF I have enough time due to the time constraints I am un
 Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed rendered throughout this development process using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API. 
 
 ### Database 
-
-
 
 ## env.py
 
@@ -610,8 +677,37 @@ The Django secret key has been changed from the default key to a new secure key 
 - <a href="https://pypi.org/project/urllib3/" target="_blank">urllib3 = 1.26.20</a>
 - <a href="https://pypi.org/project/whitenoise/" target="_blank">whitenoise = 5.3.0</a>
 
-## Software
-
 ## 11. MEDIA
+
+All images have been created with <a href="https://pixlr.com" target="_blank">Pixlr.com</a> so no copyright infringements have occurred during the making of this site.  I wish to populate the site with real data but that will not be occurring  until after this process.
+
+## 12. Credits
+
+I would like to thank Code Institute for taking me on this journey especially Elaine,  Mark, John and Roo whom have been a great help during this project.
+
+### URLS used in completing this project (in no particular order)
+
+- <a href="https://learn.codeinstitute.net/dashboard" target="_blank">Code Institute LMS</a>
+- <a href="https://ecotrust-canada.github.io/markdown-toc/" target="_blank">Github Wiki TOC generator</a>
+- <a href="https://www.tormus.com/tools/div_checker" target="_blank">Div Checker</a>
+- <a href="https://www.google.com" target="_blank">Google</a>
+- <a href="https://stackoverflow.com/questions/4420378/why-does-my-django-admin-site-not-have-styles-css-loading" target="_blank">Stack Overflow</a>
+- <a href="https://heroku.com" target="_blank">Heroku site</a>
+- <a href="https://www.reddit.com/r/SQL/comments/h04zh0/is_there_a_free_tool_to_draw_entity_relationship/?rdt=42612" target="_blank">Reddit</a>
+- <a href="https://djecrety.ir/" target="_blank">Django Key Generator site</a>
+- <a href="https://forum.djangoproject.com/t/django-username-or-email-authenticate/2775/10" target="_blank">Django Project Forums</a>
+- <a href="https://ui.dev/amiresponsive" target="_blank">ui.dev</a>
+- <a href="https://medium.com/django-unleashed/email-authentication-designing-a-modern-system-in-django-rest-framework-without-the-traditional-f2758ae08c31" target="_blank">medium</a>
+- <a href="https://heroku.com" target="_blank">Heroku site</a>
+- <a href="https://pypi.org/project/django-registration/" target="_blank">pypi.org</a>
+- <a href="https://convertio.co/" target="_blank">Convertio.co</a>
+- <a href="https://favicon.io/favicon-converter/#google_vignette" target="_blank">Favicon.io</a>
+- <a href="https://validator.w3.org/" target="_blank">validator W3C</a>
+- <a href="https://jshint.com/" target="_blank">JS Hint</a>
+- <a href="https://www.css-color-extractor.com/" target="_blank">css-color-extractor</a>
+- <a href="https://fonts.google.com/selection/embed" target="_blank">fonts.google.com</a>
+- <a href="https://draw.io" target="_blank">Draw.io</a>
+- <a href="https://pineridgedogsanctuary.org.uk/dog-adoption/" target="_blank">Pine Ridge Dog Sanctuary</a>
+<a href="https://dbs.ci-dbs.net/" target="_blank">PostGreSQL from Code Institute</a> 
 
 # END OF README.md
