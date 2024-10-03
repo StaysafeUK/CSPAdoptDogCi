@@ -33,7 +33,7 @@
             <p>I believe in the power of collective effort. Whether you have a dog sanctuary, or wish to adopt
                 your dog, I would be excited to hear from you. Fill out the form and we can get the ball rolling!</p>
 
-            <form method="post" action="">
+            <form method="post">
                 {% csrf_token %}
                 {{ collaborate_form | crispy }}
                 <input type="hidden" name="collaborate_submit" value="1">
@@ -46,7 +46,7 @@
     <div class="row justify-content-center mt-4">
         <div class="col text-center">
             <h4>Leave a Comment about this site </h4>
-            <form id="leavecommentForm" method="post" action="">
+            <form id="leavecommentForm" method="post">
                 {% csrf_token %}
                 {{ leavecomment_form | crispy }}
                 <input type="hidden" name="leavecomment_submit" value="1">
