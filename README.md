@@ -415,6 +415,98 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 
 ## 8. TESTING
 
+### HTML W3C Testing
+
+The following section details the HTML testing using W3C Markup Validation service,  As Django uses DTL Django template language the HTML has to be validated after it is rendered on a page.  Below are the results
+
+**Landing Page**
+
+The landing page HTML W3C Validator passed with no errors
+
+<div>
+<img src="documentation/Testing/landing-page-HTMLChecker.webp" alt="Landing Page HTML W3C Validator">
+</div>
+
+**PostDetail Page**
+
+Post DetailPage HTML W3C Validator recorded one Error no p element but a p end tag seen,  I have looked for this error but cannot see where Django is getting this HTML,  due to time restraints I will try to solve at the end of the project if possible.
+
+<div>
+<img src="documentation/Testing/PostDetail-page-HTMLChecker.webp" alt="PostDetail Page HTML W3C Validator">
+</div>
+
+**Search Results Page**
+
+Search results page using the HTML W3C validator has detected one error, The center element is obsolete USe CSS instead, due to the rapid turn around of this project I will leave this for now, and try to resolve by end of the project deadline.
+
+<div>
+<img src="documentation/Testing/Search-pageHTMLChecker.webp" alt="Search Results Page HTML W3C Validator">
+</div>
+
+**Login Page**
+
+Login Page results for the HTML W3C Validator passed with no errors
+
+<div>
+<img src="documentation/Testing/LoginHTMLChecker.webp" alt="Login Page HTML W3C Validator">
+</div>
+
+**Sign Up Page**
+
+The Signup Page results for HTML W3C Validator had four errors, due to the tight timescales of this project these errors will be resolved at a later date.
+
+1. End tag p implied, but there were open
+2. Unclosed element span
+3. Stray end tag span
+4. No p element in scope but a p end tag
+
+<div>
+<img src="documentation/Testing/signupHTMLChecker.webp" alt="Sign Up Results Page HTML W3C Validator">
+</div>
+
+**About Page**
+
+The About page has 6 Errors and 4 Warnings for the HTML W3C Validator
+
+1 8 Bad value 85% for attribute width on element img : Expected a digit but saw % instead : *This error I will try and correct before the project deadline*
+2 Duplicate ID: _ (4)  *The Duplicate ID errors are due to the collaboration form using the same fields such as. id_name and id_email as the leavecomments* 
+form.  *These errors do not effect the workings of the site and can be written off due to the extra form for leavecomments.*     
+
+2.1  Duplicate ID div_id_name:
+2.2  Duplicate ID id_name.
+2.3  Duplicate ID div_ id_email
+2.4  Duplicate ID id_email.
+3 V Attribute method not allowed on element a at this point. *This attribute is used by javascript for the CRUD Function*
+
+<div>
+<img src="documentation/Testing/About-PageHTMLChecker.webp" alt="About Page HTML W3C Validator">
+</div>
+
+###CSS Validator###
+
+The CSS Validator had a few errors which I corrected such as elements not being in alphabetical order, I have resolved these issues now and the CSS passes, 
+see image below.
+
+<div>
+<img src="documentation/Testing/CSSValidator.webp" alt="CSS W3C Validator">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 9. DEPLOYMENT
 
 ## Deploying to Heroku
