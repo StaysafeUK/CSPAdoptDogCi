@@ -248,11 +248,13 @@ The sign in page is so users can be authenticated to the site so they have the a
 
 ### Tabular Display of Information from Database
 
+One of the best features of the site is the tabular display of information presented from the PostGresSQL database into a table.  The example below shows information from the search function in the Navbar.  Another example of this is from clicking on a dog and seeing the information provided in a table.
+
 
 <div>
 <img src="documentation/images/tabulardisplay-adoptdog.webp" alt="AdoptDog Tabular display of Dog(s) information">
 </div>
-
+ 
 ### Comments with CRUD functionality for Dogs and Site
 
 As mentioned above the site includes the ability to have:
@@ -415,15 +417,27 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Data
 
 ## 9. DEPLOYMENT
 
-## Database
-
 ## Deploying to Heroku
 
 ## 10. TECHNOLOGIES
 
 ### Hosting 
-Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed rendered throughout this development process using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API.      
+Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed rendered throughout this development process using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API. 
 
+### Database 
+
+
+
+## env.py
+
+The secrets needed to run this Django site including database strings, cloudinary API strings and passwords, Django secrets, etc.  Are stored in .env.py which is added to gitignore and not uploaded to the Github respository.  In *settings.py*   
+
+*if os.path.isfile('env.py'):*
+                *import env* 
+
+the secrets are called by the  *os.environ.get* method.  
+
+The Django secret key has been changed from the default key to a new secure key and has not been uploaded to this repository.
 
 ### Languages
 - <a href="https://dev.w3.org/html5/spec-LC" target="_blank">HTML 5</a>
