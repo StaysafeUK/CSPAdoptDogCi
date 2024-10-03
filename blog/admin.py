@@ -6,8 +6,9 @@ from .models import Post, Comment, Sanctuary
 admin.site.register(Comment)
 admin.site.register(Sanctuary)
 
+
 @admin.register(Post)
-# add to Summernote in Admin pageds 
+# add to Summernote in Admin pages 
 class PostAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status')
@@ -15,4 +16,3 @@ class PostAdmin(SummernoteModelAdmin):
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
-

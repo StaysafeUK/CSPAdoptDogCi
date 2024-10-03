@@ -1,6 +1,7 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 
+
 # Create your models here.
 class About(models.Model):
     """
@@ -14,6 +15,7 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class CollaborateRequest(models.Model):
     """
@@ -29,6 +31,8 @@ class CollaborateRequest(models.Model):
     """
      Leavecomment Model for CRUD operation
     """
+
+
 class LeaveComment(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()

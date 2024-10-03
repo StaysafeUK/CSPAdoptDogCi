@@ -494,20 +494,22 @@ see image below.
 <img src="documentation/Testing/CSSValidator.webp" alt="CSS W3C Validator">
 </div>
 
-
-
 ### JavaScript Validator ###
 <a href="https://jshint.com/" target="_blank">JS Hint Link</a>
 
 **comments.js JS Validator**
 
+The javascript comments.js has 19 warnings and one variable *bootstrap* that is not defined.  The 19 warnings are ES6 esversion:6 errors and can
+be ignored at this time.
+
 <div>
 <img src="documentation/Testing/commentsJSValidator.webp" alt="AdoptDog Search sanctuaries">
 </div>
 
-
-
 **leavecomments.js JS Validator**
+
+the javascript leavecomments.js jas 18 warnings and three variables that are not defined,  the variables that are not defined include commentForm,
+commentID, bootstrap.  IF I have enough time due to the time constraints I am under I will resolve this minor warning.
 
 <div>
 <img src="documentation/Testing/leavecommentsJSValidator.webp" alt="AdoptDog Search sanctuaries">
