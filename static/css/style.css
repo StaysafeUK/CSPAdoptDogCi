@@ -3,10 +3,11 @@ body {
 }
 
 .brand {
+    color: #4b4b4f;
     font-family: "Inter", sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4b4b4f;
+   
 }
 
 .green-o {
@@ -30,8 +31,9 @@ body {
 }
 
 .card {
-    border: none;
     background-color: transparent;
+    border: none;
+    
 }
 
 .image-contain {
@@ -39,16 +41,16 @@ body {
 }
 
 .image-notify {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
     background-color: #18815c;
+    bottom: 5%;
+    left: -2px;
+    min-width: 30%;
+    position: absolute;   
 }
 
 .scale {
-    width: 100%;
     height: auto;
+    width: 100%;
 }
 
 .author {
@@ -58,11 +60,11 @@ body {
 }
 
 .masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
     display: inline-block;
     height: 33vh;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;    
     width: 100%;
 }
 
@@ -73,33 +75,17 @@ body {
 }
 
 .masthead-image {
-    position: relative;
     overflow: hidden;
+    position: relative;
+    
 }
 
-/*masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 110%;
-    background: #445261;
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    transform: rotate(30deg);
-    z-index: 100;
-}
-
-*/
 .masthead-image::after {
-position: absolute;
-top: 0%;
-right: 0;
-width: 90%;
-height: 100%;
-background: inherit;
-border-radius: 0 50% 50% 0;
+    background: inherit;
+    border-radius: 0 50% 50% 0;
+    height: 100%;    
+    position: absolute;
+    width: 90%;
 } 
 
 /*
@@ -115,8 +101,9 @@ border-radius: 0 50% 50% 0;
 
 
 .post-link {
-    text-decoration: none;
     color: #445261;
+    text-decoration: none;
+    
 }
 
 
