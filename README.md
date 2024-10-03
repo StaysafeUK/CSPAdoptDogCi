@@ -485,7 +485,7 @@ form.  *These errors do not effect the workings of the site and can be written o
 <img src="documentation/Testing/About-PageHTMLChecker.webp" alt="About Page HTML W3C Validator">
 </div>
 
-###CSS Validator###
+### CSS Validator###
 
 The CSS Validator had a few errors which I corrected such as elements not being in alphabetical order, I have resolved these issues now and the CSS passes, 
 see image below.
@@ -494,8 +494,28 @@ see image below.
 <img src="documentation/Testing/CSSValidator.webp" alt="CSS W3C Validator">
 </div>
 
+
+
 ### JavaScript Validator ###
 <a href="https://jshint.com/" target="_blank">JS Hint Link</a>
+
+**comments.js JS Validator**
+
+<div>
+<img src="documentation/Testing/commentsJSValidator.webp" alt="AdoptDog Search sanctuaries">
+</div>
+
+
+
+**leavecomments.js JS Validator**
+
+<div>
+<img src="documentation/Testing/leavecommentsJSValidator.webp" alt="AdoptDog Search sanctuaries">
+</div>
+
+
+
+
 
 
 
