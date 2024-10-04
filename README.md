@@ -423,6 +423,8 @@ Below are The ERD Diagrams created on Code Institute's Elephant PostGreSQL Datab
 
 ## 8. TESTING
 
+Adaptdog project has been tested throughout the development process, the section below shows the testing that has been applied during the testing phase. 
+
 ### HTML W3C Testing
 <a href="https://validator.w3.org/" target="_blank">W3C Validator Link</a>
 
