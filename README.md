@@ -603,6 +603,8 @@ views.py shows quite a few errors mainly due to the large amounts of code that a
 wanting Sendgrid and email notifications when this site goes live in 7 weeks.  I will fix this before the site goes
 live.  I have my own method for commenting out large sections of code so apologise if this is not PEP 8 compliant.
 
+*NOTE: Since this was written I have removed the dead code and the PEP8 viewer should show less errors*
+
 <div>
 <img src="documentation/Testing/views_py-validator-blog.webp" alt="AdoptDog views.py blog">
 </div>
