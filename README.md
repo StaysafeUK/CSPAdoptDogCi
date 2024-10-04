@@ -625,7 +625,7 @@ Heroku deployment was achieved early in this project to avoid any pitfalls later
 
 ## PostGreSQL
 
-- Navigate to PostgreSQL from Code Institute get connection string sent via email
+- Navigate to PostgreSQL ElephantSQL from Code Institute get connection string sent via email
 add *os.environ.setdefault(*
     *"DATABASE_URL", "<your-database-URL>")* to env.py
 - Install *pip3 install dj-database-url~=0.5 psycopg2~=2.9* and add to requirements.txt
@@ -687,13 +687,6 @@ A special field is also used for the Post and About model for Cloudinary to allo
 ### Cloudinary ###
 
 Cloudinary is used to serve dynamic images to Heroku from accessing urls and authenticating to the Cloudinary API,  The API variable and connection string must be stored in env.py and also in CONFIG_VARS in Heroku. 
-
-
-
-
-
-
-
 
 
 ## env.py
