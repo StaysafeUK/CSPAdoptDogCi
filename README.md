@@ -1,6 +1,3 @@
-  # ADOPTDOG PROJECT https://www.adoptdog.co.uk
-  
-  # Contents 
 - [ADOPTDOG PROJECT https://www.adoptdog.co.uk](#adoptdog-project-https---wwwadoptdogcouk)
 - [Contents](#contents)
   * [1. OVERVIEW](#1-overview)
@@ -56,10 +53,13 @@
     + [Manual Testing](#manual-testing)
     + [Python Testing](#python-testing)
   * [9. DEPLOYMENT](#9-deployment)
-  * [Deploying to Heroku](#deploying-to-heroku)
+  * [Heroku](#heroku)
+  * [PostGreSQL](#postgresql)
+  * [Cloudinary](#cloudinary)
   * [10. TECHNOLOGIES](#10-technologies)
-    + [Hosting](#hosting)
-    + [Database](#database)
+    + [Hosting (Heroku)](#hosting--heroku-)
+    + [Database (Elephant SQL)](#database--elephant-sql-)
+    + [Cloudinary](#cloudinary-1)
   * [env.py](#envpy)
     + [Languages](#languages)
     + [Frameworks, Libraries, API's and other Programs/Websites Used](#frameworks--libraries--api-s-and-other-programs-websites-used)
@@ -68,9 +68,8 @@
     + [URLS used in completing this project (in no particular order)](#urls-used-in-completing-this-project--in-no-particular-order-)
 - [END OF README.md](#end-of-readmemd)
 
-
-
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 <div>
 <img src="documentation/images/adoptdog-screens.webp" alt="AdoptDog U-DEV">
@@ -164,7 +163,7 @@ As a User I can find a rescue dog so that I can select a new pet from available 
 
 ## 3. SITE OWNER GOALS
 
-- The site owners goal is to have a clean site running on the Django framework with PostGresSQL database,  hosted on Heroku running Javascript for CRUD (Create, Read, Update, Delete) operation that has the ability to create well formatted posts showing images and important information regarding the Dog specified so information can quickly be asatained  regarding that animal.
+- The site owners goal is to have a clean site running on the Django framework with PostGreSQL database,  hosted on Heroku running Javascript for CRUD (Create, Read, Update, Delete) operation that has the ability to create well formatted posts showing images and important information regarding the Dog specified so information can quickly be asatained  regarding that animal.
 
 - The site owners goal is to have a site that can receive comments from the public,  or collaboration requests for sanctuaries or dog owners that want to move their pet dog onto another family for whatever reason.
 
@@ -225,7 +224,7 @@ The footer shows clearly the social media site connections with A HREFS to selec
 
 ### Landing Page 
 
-The landing page shows dogs that are available pulled from the Elephant PostGresSQL database,  on cards that display the sanctuary where the dog is housed. Upon clicking the page is redirected to a Post_detail view where more information is available regarding the specific dog.
+The landing page shows dogs that are available pulled from the Elephant PostGreSQL database,  on cards that display the sanctuary where the dog is housed. Upon clicking the page is redirected to a Post_detail view where more information is available regarding the specific dog.
 
 <div>
 <img src="documentation/images/landingpage-adoptdog.webp" alt="AdoptDog Landing Page">
@@ -257,7 +256,7 @@ The sign in page is so users can be authenticated to the site so they have the a
 
 ### Tabular Display of Information from Database
 
-One of the best features of the site is the tabular display of information presented from the PostGresSQL database into a table.  The example below shows information from the search function in the Navbar.  Another example of this is from clicking on a dog and seeing the information provided in a table.
+One of the best features of the site is the tabular display of information presented from the PostGreSQL database into a table.  The example below shows information from the search function in the Navbar.  Another example of this is from clicking on a dog and seeing the information provided in a table.
 
 
 <div>
@@ -410,7 +409,7 @@ The wire frame images have not been updated since coding began, and throughout t
 
 The entity diagram was created at the design phase of the project,  As mentioned above an additional model of leavecomments has been added during the User Story phase to give the ability for CRUD functionality,  this was achieved by creating an independent table with no foreign keys. The footer has also been modified to show Font Awesome Icons of clickable links to the various social media platforms.
 
-Below are The ERD Diagrams created on Code Institute's Elephant PostGresSQL Database,  The Sanctuary model has a one to many relationship, extending the Post Model to have the ability to select a Sanctuary for a Dog when created in the Admin Portal.
+Below are The ERD Diagrams created on Code Institute's Elephant PostGreSQL Database,  The Sanctuary model has a one to many relationship, extending the Post Model to have the ability to select a Sanctuary for a Dog when created in the Admin Portal.
 
 <div>
 <img src="documentation/diagrams/erd_models.webp" alt="AdoptDog Full Entity Relationship Diagram">
@@ -610,18 +609,96 @@ live.  I have my own method for commenting out large sections of code so apologi
 
 ## 9. DEPLOYMENT
 
-## Deploying to Heroku
+## Heroku ##
+
+Heroku deployment was achieved early in this project to avoid any pitfalls later on below are the steps required to use this provider.
+
+- create an account on Heroku 
+- Create the Heroku App
+- In the Apps settings tab ensure the Config Var has *DISABLE_COLLECTSTATIC*
+- In the Procfile ensure *web:gunicorn adoptdog.wsgi* is set
+- In settings.py ensure ALLOWED_HOSTS has ,'.herokuapp.com'
+- add your github repository in Deployment settings
+-  Ensure Branch settings is set to *Main* in adoptdog Heroku application 
+- Push the Code to Github
+- Run a deploy and confirm that this goes through without errors
+
+## PostGreSQL
+
+- Navigate to PostgreSQL from Code Institute get connection string sent via email
+add *os.environ.setdefault(*
+    *"DATABASE_URL", "<your-database-URL>")* to env.py
+- Install *pip3 install dj-database-url~=0.5 psycopg2~=2.9* and add to requirements.txt
+- In settings.py connect the environment variable 
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+
+- After creating the models.py run *python3 manage.py migrate*
+- Create a superuser account *python3 manage.py createsuperuser*
+
+**Connect Database to Heroku**
+
+- in config_vars add DATABASE_URL variable and enter connection string
+
+## Cloudinary
+
+- install Cloudinary Python packages *pip3 install cloudinary~=1.36.0 dj3-cloudinary-storage~=0.0.6 urllib3~=1.26.15*
+- Signup to Cloudinary and login
+- In the Cloudinary dashboard copy the CLOUDINARY_URL
+- on env.py set the CLOUDINARY_URL *os.environ.setdefault(
+    "CLOUDINARY_URL", "<URL>"
+- Add the cloudinary_storage to INSTALLED_APPS in settings.py
+- Go to Heroku to config Vars and add a CLOUDINARY_URL Variable with connection string.
 
 ## 10. TECHNOLOGIES
 
-### Hosting 
+### Hosting (Heroku)
 Heroku is used for Hosting the Django site and is deployed from Gitpod IDE where the site has been viewed rendered throughout this development process using *python3 manage.py runserver* initiating Gunicorn webserver.  Cloudinary is used for dynamic images through the Cloudinary API. 
 
-### Database 
+### Database (Elephant SQL)
+
+The. database is provided by PostGreSQL Elephant DB from Code Institute,  The database is created by creating models on the Blog and About applications models.py file.  Django uses  the following code from settings,py to connect to the database
+
+*DATABASES = {*
+    *'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))*
+}
+
+Heroku also needs to have environment Variables set in config Vars with *DATABASE_URL* and the connection string.  For the database to be available from when the application is deployed on Heroku.
+
+Object Orientated programming OO using the class method to create the Tables on PostGreSQL,  The relationships have been shown earlier on the ERD relationship diagram below for you reference.  The models are created on the database by running two commands.
+
+*python3 manage.py makemigrations* - This command converts the Class based model into SQL code that can be viewed from the migrations folder in the application.  The models.py is created in each Django application by default.
+
+*python3 manage.py migrate*. - The Migrate command uses the last migration file prefixed with a number *0001_initial.py* for example and runs that code against our PostGreSQL database.  
+
+<div>
+<img src="documentation/diagrams/adoptdog-erd_1.6.webp" alt="AdoptDog Full Entity Relationship Diagram">
+</div>
+
+The database I have created has two custom models Sanctuary providing a foreign key relationship one to many for the Post model fk_dog_sanctuary ForeignKey (id) on the diagram below, and Comment one to many relationship Post ForeignKey (id) for comments.  I have used a python Django package for from phonenumber_field.*modelfields import PhoneNumberField* to do the regex for phone numbers in the UK.  *sanct_telephone* PhoneNumberField.  
+
+A special field is also used for the Post and About model for Cloudinary to allow images from the Cloudinary API.
+
+*dog_image CloundinaryField*
+*profile_image CloudinaryField*
+
+### Cloudinary ###
+
+Cloudinary is used to serve dynamic images to Heroku from accessing urls and authenticating to the Cloudinary API,  The API variable and connection string must be stored in env.py and also in CONFIG_VARS in Heroku. 
+
+
+
+
+
+
+
+
 
 ## env.py
 
-The secrets needed to run this Django site including database strings, cloudinary API strings and passwords, Django secrets, etc.  Are stored in .env.py which is added to gitignore and not uploaded to the Github respository.  In *settings.py*   
+The secrets needed to run this Django site including database strings, cloudinary API strings and passwords, Django secrets, etc.  Are stored in .env.py which is added to gitignore and not uploaded to the Github repository.  In *settings.py*   
 
 *if os.path.isfile('env.py'):*
                 *import env* 
