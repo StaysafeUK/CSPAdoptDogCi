@@ -787,4 +787,5 @@ I would like to thank Code Institute for taking me on this journey especially El
 written by
 ###  Justin R Evans ###
 
+**MY PERSONAL PROFILE** <a href="https://jrevansprofile.verifyus.co.uk" target="_blank">JREVANS profile page </a>
 # END OF README.md
