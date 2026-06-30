@@ -785,6 +785,6 @@ I would like to thank Code Institute for taking me on this journey especially El
 <a href="https://dbs.ci-dbs.net/" target="_blank">PostGreSQL from Code Institute</a> 
 
 written by
-**"Justin R Evans***
+**"Justin R Evans ***
 
 # END OF README.md
