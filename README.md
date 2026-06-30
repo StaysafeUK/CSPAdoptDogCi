@@ -784,4 +784,7 @@ I would like to thank Code Institute for taking me on this journey especially El
 - <a href="https://pineridgedogsanctuary.org.uk/dog-adoption/" target="_blank">Pine Ridge Dog Sanctuary</a>
 <a href="https://dbs.ci-dbs.net/" target="_blank">PostGreSQL from Code Institute</a> 
 
+written by
+**"Justin R Evans***
+
 # END OF README.md
